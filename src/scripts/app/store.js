@@ -1,0 +1,1 @@
+Embertest.ApplicationAdapter = DS.FixtureAdapter;
