@@ -1,6 +1,8 @@
 define([
   'app/app',
-  'app/providers/comics'], function(app, comicsFactory) {
+  'app/providers/comics'
+], function(app, comicsFactory) {
+  'use strict';
 
   /**
    * @class ComicCtrl
@@ -25,9 +27,6 @@ define([
         console.log(error);
       });
   }
-
-  // ComicCtrl.$inject = ['$scope', 'comicsFactory'];
-
 
   return app.controller('ComicCtrl', ComicCtrl);
 });

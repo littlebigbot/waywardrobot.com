@@ -6,7 +6,6 @@ define([
 
   var router = function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
-    // $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('index', {
         url: '/',

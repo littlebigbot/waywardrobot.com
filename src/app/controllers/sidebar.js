@@ -1,22 +1,25 @@
-/**
- * @class SidebarCtrl
- * @classdesc Controller for the sidebar view
- * @ngInject
- */
-var SidebarCtrl = function ($scope, comicsFactory) {
+define([
+  'app/app',
+  'app/providers/comics'
+], function(app, comicsFactory) {
+  'use strict';
 
-	if(typeof $scope.comics === 'undefined') {
-		comicsFactory.getComics()
-		  .then(function (response) {
-		    $scope.comics = response.data;
-		  }, function (error) {
-		    console.log(error);
-		  });
-	}
-}
+  /**
+   * @class SidebarCtrl
+   * @classdesc Controller for the sidebar view
+   * @ngInject
+   */
+  var SidebarCtrl = function ($scope, comicsFactory) {
 
-SidebarCtrl.$inject = ['$scope', 'comicsFactory'];
+    if(typeof $scope.comics === 'undefined') {
+      comicsFactory.getComics()
+        .then(function (response) {
+          $scope.comics = response.data;
+        }, function (error) {
+          console.log(error);
+        });
+    }
+  }
 
-angular
-  .module('app')
-  .controller('SidebarCtrl', SidebarCtrl);
+  return app.controller('SidebarCtrl', SidebarCtrl);
+});
