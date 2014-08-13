@@ -1,0 +1,24 @@
+{
+  "name": "Wayward Robot",
+  "version": "0.1.0",
+  "authors": [
+    "John Briggs <john.briggs@imagineeasy.com>"
+  ],
+  "description": "A Webcomic full of Wonderment and Stuff",
+  "main": "dist",
+  "license": "MIT",
+  "homepage": "http://waywardrobot.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.21",
+    "angular-ui-router": "~0.2.10",
+    "requirejs": "~2.1.14"
+  }
+}
