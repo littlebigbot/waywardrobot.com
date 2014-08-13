@@ -3,4 +3,4 @@ node_modules
 .htaccess
 bower_components
 npm-debug.log
-/src/app/vendor
+/src/vendor
