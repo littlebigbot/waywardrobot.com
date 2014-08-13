@@ -2,4 +2,5 @@ node_modules
 .DS_Store
 .htaccess
 bower_components
-.tmp
+npm-debug.log
+/src/app/vendor
