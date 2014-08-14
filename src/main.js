@@ -14,7 +14,9 @@ requirejs.config({
     }
   },
   deps: [
-    'app/controllers/comic'
+    'app/directives/bottom',
+    'app/directives/sidebar',
+    'app/directives/topnav'
   ]
 });
 
