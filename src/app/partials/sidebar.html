@@ -6,17 +6,14 @@
 
 	<nav class="comic-list-wrap">
 
-		<!-- begin: .comics-list -->
-		<ul class="comics-list">
-
+		<ul class="comics-list" ng-repeat="comic in comics">
 			<li>
-				<a href="/:month/:day/:year/:slug">
-					<img src="" alt="TITLE" />
-					<h3>TITLE</h3>
+				<a href="{{comic._links.self}}">
+					<img src="images/comics/{{comic._images.thumb}}" alt="{{comic.title}}" />
+					<h3>{{comic.title}}</h3>
 				</a>
 			</li>
 		</ul>
-		<!-- end: .comics-list -->
 
 	</nav>
 

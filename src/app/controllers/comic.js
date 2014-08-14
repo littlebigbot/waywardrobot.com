@@ -21,7 +21,7 @@ define([
 
     comicsFactory.getComic()
       .then(function (response) {
-        $scope.currentComic = response.data;
+        $scope.comic = response.data;
         window.r = response;
       }, function (error) {
         console.log(error);

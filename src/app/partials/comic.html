@@ -7,11 +7,12 @@
 		</div>
 
 		<hgroup>
-			<h1>{{currentComic.title}}</h1>
-			<h3>SUBTITLE</h3>
+			<h1>{{comic.title}}</h1>
+			<h3>{{comic.subtitle}}</h3>
+      <time datetime="{{comic.date}}">{{comic.date | date:'MM:dd:yyyy'}}</time>
 		</hgroup>
 		<div class="the-comic">
-			<img src="" alt="TITLE" />
+			<img src="{{comic._images.full}}" alt="{{comic.title}}" />
 		</div>
 		<ul class="share-links">
 			<li>
@@ -24,12 +25,7 @@
 	<div class="below-fold">
 
 		<section class="post">
-			<hgroup>
-				<h2>TITLE</h2>
-				<h4>SUBTITLE</h4>
-				<date>DATE</date>
-			</hgroup>
-			POSTCONTENT
+			{{comic.post}}
 		</section>
 
 		<aside class="ads">

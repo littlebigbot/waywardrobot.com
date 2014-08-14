@@ -1,7 +1,7 @@
 define([
-  'app/app'
+  'app/app',
   'app/controllers/sidebar'
-], function(app, SidebarCtrl) {
+], function(app) {
   'use strict';
 
   var sidebarDirective = function () {
@@ -10,8 +10,8 @@ define([
       replace: true,
       scope: {},
       templateUrl: 'app/partials/sidebar.html',
-      controller: SidebarCtrl,
-      controllerAs: 'comics',
+      controller: 'SidebarCtrl as sidebar',
+      // controllerAs: 'comics',
       link: function () {
 
       }
