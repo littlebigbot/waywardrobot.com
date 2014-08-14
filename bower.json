@@ -16,9 +16,12 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "angular": "~1.2.21",
-    "angular-ui-router": "~0.2.10",
-    "requirejs": "~2.1.14"
+    "angular-ui-router": "~0.2.10"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.14",
+    "bourbon": "~4.0.2"
   }
 }

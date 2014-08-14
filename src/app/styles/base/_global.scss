@@ -1,0 +1,32 @@
+ul, ol {
+  padding-left: 3.25em;
+  list-style-type: none;
+}
+
+ul {
+  li:before {
+    content: "·";
+    font-size: 2em;
+    font-family: "Times New Roman";
+    float: left;
+    margin-left: -0.5em;
+  }
+}
+
+ol {
+
+  &:first-child {
+    counter-reset: customlistcounter;
+  }
+
+  > li {
+    counter-increment: customlistcounter;
+
+    &:before {
+      content: counter(customlistcounter) " ";
+      font-weight: 600;
+      float: left;
+      margin-left: -1.25em;
+    }
+  }
+}

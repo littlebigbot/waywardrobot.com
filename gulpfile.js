@@ -11,8 +11,7 @@ var gulp          = require('gulp'),
     usemin        = require('gulp-usemin'),
     rev           = require('gulp-rev'),
     templateCache = require('gulp-angular-templatecache'),
-    sass          = require('gulp-sass'),
-    bourbon       = require('node-bourbon').includePaths,
+    sass          = require('gulp-ruby-sass'),
     gulpIf        = require('gulp-if'),
     argv          = require('yargs').argv;
 
@@ -20,10 +19,7 @@ var gulp          = require('gulp'),
 var paths = {
   src: 'src/',
   app: 'src/app/',
-  build: 'dist/',
-  ignore: {
-    styles: '!./app/styles/*/_*.scss'
-  }
+  build: 'dist/'
 };
 
 // Nicer name.
@@ -33,18 +29,11 @@ if(argv.prod) {
 
 gulp.task('styles', function() {
   gulp.src([
-    paths.app + 'styles/**/*.scss',
-    paths.ignore.styles
+    paths.app + 'styles/app.scss'
   ])
-    .pipe(sass({
-      includePaths: ['styles'].concat(bourbon)
-    }))
-    .pipe(concat('main.css'))
-    .pipe(gulp.dest(isProd ? paths.build + 'css/' : paths.app + 'styles/'));
-    // .pipe(gulpIf(isProd, rev()))
-    // .pipe(gulpIf(isProd, gulp.dest(paths.build + 'css/')))
-    // .pipe(gulpIf(isProd, rev.manifest()))
-    // .pipe(gulpIf(isProd, gulp.dest(paths.build + 'assets/')))
+      .pipe(sass())
+      .on('error', function(err) { console.log(err.message); })
+      .pipe(gulp.dest(isProd ? paths.build + 'css/' : paths.app + 'styles/'));
 });
 
 gulp.task('html', function() {
@@ -66,10 +55,10 @@ gulp.task('scripts', ['partials'], function() {
       mangle: false
     }))
     .pipe(ngAnnotate())
-    // .pipe(wrapper({
-    //   header: '(function(){ \'use strict\';',
-    //   footer: '})();'
-    // }))
+    .pipe(gulpIf(isProd, wrapper({
+      header: '(function(){ \'use strict\';',
+      footer: '})();'
+    })))
     .pipe(gulp.dest(paths.build + 'js/'));
 });
 
