@@ -2,55 +2,97 @@
 	{
 		"title":"Barks with Wolves",
 		"subtitle": "Meow Meow Ruff Ruff",
-		"date":"June 12",
-		"imgUrl": "CORBLIMEY",
+		"date":"2012-06-12",
 		"post": "yadda yadda bing bong fool with the toolwhips",
 		"id": 6,
-		"slug": "bob"
+		"slug": "bob",
+		"_links": {
+			"self": "/06/12/2012/bob"
+		},
+		"_images": {
+			"thumb": "testing_t.jpg",
+			"medium": "testing_m.jpg",
+			"full": "testing_f.jpg"
+		}
 	},
 	{
 		"title":"Baying with Michael Bay",
 		"subtitle": "Meow Meow Ruff Ruff",
-		"date":"June 8",
-		"imgUrl": "CORBLIMEY",
+		"date":"2012-06-08",
 		"post": "yadda yadda bing bong fool with the toolwhips",
 		"id": 5,
-		"slug": "bob"
+		"slug": "bob",
+		"_links": {
+			"self": "/06/08/2012/bob"
+		},
+		"_images": {
+			"thumb": "testing_t.jpg",
+			"medium": "testing_m.jpg",
+			"full": "testing_f.jpg"
+		}
 	},
 	{
 		"title":"Liff",
 		"subtitle": "Meow Meow Ruff Ruff",
-		"date":"June 7",
-		"imgUrl": "CORBLIMEY",
+		"date":"2012-06-07",
 		"post": "yadda yadda bing bong fool with the toolwhips",
 		"id": 4,
-		"slug": "bob"
+		"slug": "bob",
+		"_links": {
+			"self": "/06/07/2012/bob"
+		},
+		"_images": {
+			"thumb": "testing_t.jpg",
+			"medium": "testing_m.jpg",
+			"full": "testing_f.jpg"
+		}
 	},
 	{
 		"title":"Death",
 		"subtitle": "Meow Meow Ruff Ruff",
-		"date":"June 5",
-		"imgUrl": "CORBLIMEY",
+		"date":"2012-06-05",
 		"post": "yadda yadda bing bong fool with the toolwhips",
 		"id": 3,
-		"slug": "bob"
+		"slug": "bob",
+		"_links": {
+			"self": "/06/05/2012/bob"
+		},
+		"_images": {
+			"thumb": "testing_t.jpg",
+			"medium": "testing_m.jpg",
+			"full": "testing_f.jpg"
+		}
 	},
 	{
 		"title":"Thats so Raven was cancelled on my Birthday",
 		"subtitle": "Meow Meow Ruff Ruff",
-		"date":"June 4",
-		"imgUrl": "CORBLIMEY",
+		"date":"2012-06-04",
 		"post": "yadda yadda bing bong fool with the toolwhips",
 		"id": 2,
-		"slug": "bob"
+		"slug": "bob",
+		"_links": {
+			"self": "/06/04/2012/bob"
+		},
+		"_images": {
+			"thumb": "testing_t.jpg",
+			"medium": "testing_m.jpg",
+			"full": "testing_f.jpg"
+		}
 	},
 	{
 		"title":"So much for the vest",
 		"subtitle": "Meow Meow Ruff Ruff",
-		"date":"June 1",
-		"imgUrl": "CORBLIMEY",
+		"date":"2012-06-01",
 		"post": "yadda yadda bing bong fool with the toolwhips",
 		"id": 1,
-		"slug": "bob"
+		"slug": "bob",
+		"_links": {
+			"self": "/06/01/2012/bob"
+		},
+		"_images": {
+			"thumb": "testing_t.jpg",
+			"medium": "testing_m.jpg",
+			"full": "testing_f.jpg"
+		}
 	}
 ]

@@ -1,9 +1,16 @@
 {
-    "title":"Barks with Wolves",
-    "subtitle": "Meow Meow Ruff Ruff",
-    "date":"June 12",
-    "imgUrl": "CORBLIMEY",
-    "post": "yadda yadda bing bong fool with the toolwhips",
-    "id": 6,
-    "slug": "bob"
+	"title":"Barks with Wolves",
+	"subtitle": "Meow Meow Ruff Ruff",
+	"date":"2012-06-12",
+	"post": "yadda yadda bing bong fool with the toolwhips",
+	"id": 6,
+	"slug": "bob",
+	"_links": {
+		"self": "/06/12/2012/bob"
+	},
+	"_images": {
+		"thumb": "testing_t.jpg",
+		"medium": "testing_m.jpg",
+		"full": "testing_f.jpg"
+	}
 }
