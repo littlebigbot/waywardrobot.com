@@ -9,7 +9,7 @@
 		<ul class="comics-list" ng-repeat="comic in comics">
 			<li>
 				<a href="{{comic._links.self}}">
-					<img src="images/comics/{{comic._images.thumb}}" alt="{{comic.title}}" />
+					<img ng-src="images/comics/{{comic._images.thumb}}" alt="{{comic.title}}" />
 					<h3>{{comic.title}}</h3>
 				</a>
 			</li>
