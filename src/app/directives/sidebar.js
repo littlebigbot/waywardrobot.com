@@ -10,7 +10,7 @@ define([
       replace: true,
       scope: {},
       templateUrl: 'app/partials/sidebar.html',
-      controller: 'SidebarCtrl as sidebar',
+      controller: 'SidebarCtrl as ctrl',
       // controllerAs: 'comics',
       link: function () {
 

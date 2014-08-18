@@ -7,12 +7,12 @@
 		</div>
 
 		<hgroup>
-			<h1>{{comic.title}}</h1>
-			<h3>{{comic.subtitle}}</h3>
-      <time datetime="{{comic.date}}">{{comic.date | date:'MM:dd:yyyy'}}</time>
+			<h1>{{ctrl.comic.title}}</h1>
+			<h3>{{ctrl.comic.subtitle}}</h3>
+      <time datetime="{{ctrl.comic.date}}">{{ctrl.comic.date | date:'MM:dd:yyyy'}}</time>
 		</hgroup>
 		<div class="the-comic">
-			<img ng-src="images/comics/{{comic._images.full}}" alt="{{comic.title}}" />
+			<img ng-src="{{'/images/comics/' + ctrl.comic._images.full}}" alt="{{ctrl.comic.title}}" />
 		</div>
 		<ul class="share-links">
 			<li>
@@ -25,7 +25,7 @@
 	<div class="below-fold">
 
 		<section class="post">
-			{{comic.post}}
+			{{ctrl.comic.post}}
 		</section>
 
 		<aside class="ads">

@@ -13,6 +13,7 @@ var gulp          = require('gulp'),
     templateCache = require('gulp-angular-templatecache'),
     sass          = require('gulp-ruby-sass'),
     gulpIf        = require('gulp-if'),
+    replace       = require('gulp-replace'),
     argv          = require('yargs').argv;
 
 // Config
@@ -84,8 +85,7 @@ gulp.task('partials', function() {
 gulp.task('watch-partials', function() {
   watch({
     glob: paths.app + 'partials/**/*.html',
-    name: 'partials watcher',
-    verbose: true
+    name: 'partials watcher'
   }, function(files) {
     if(isProd) return gulp.start('partials');
   })
@@ -96,8 +96,7 @@ gulp.task('watch-partials', function() {
 gulp.task('watch-styles', function() {
   watch({
     glob: paths.app + 'styles/**/*.scss',
-    name: 'styles watcher',
-    verbose: true
+    name: 'styles watcher'
   }, function(files) {
     return gulp.start('styles');
   })
@@ -107,9 +106,8 @@ gulp.task('watch-styles', function() {
 
 gulp.task('watch-scripts', function() {
   watch({
-    glob: paths.src + '**/*.js',
-    name: 'scripts watcher',
-    verbose: true
+    glob: paths.app + '**/*.js',
+    name: 'scripts watcher'
   }, function(files) {
       if(isProd) return gulp.start('scripts')
   })
@@ -117,11 +115,28 @@ gulp.task('watch-scripts', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('copy-images', function() {
+  gulp.src([
+    paths.src + 'images/**/*.{png,gif,jpg,jpeg,svg,ico}'
+  ])
+      .pipe(gulp.dest(paths.build + 'images'));
+});
+
+gulp.task('config-replace', ['scripts'], function(){
+  gulp.src([paths.build + 'js/main.js'])
+    .pipe(wait(1000))
+    .pipe(replace(/environments\.development/g, 'environments.production'))
+    .pipe(gulp.dest(paths.build + 'js'));
+});
+
+
 gulp.task('build', function() {
   isProd = true;
   gulp.start('styles')
   gulp.start('scripts')
   gulp.start('html')
+  gulp.start('copy-images')
+  gulp.start('config-replace')
 });
 
 gulp.task('default', [

@@ -3,13 +3,13 @@
 namespace Tests\Services;
 use Silex\Application;
 use Silex\Provider\DoctrineServiceProvider;
-use App\Services\NotesService;
+use App\Services\ComicsService;
 
 
-class NotesServiceTest extends \PHPUnit_Framework_TestCase
+class ComicsServiceTest extends \PHPUnit_Framework_TestCase
 {
 
-    private $noteService;
+    private $comicService;
 
     public function setUp()
     {
@@ -20,43 +20,43 @@ class NotesServiceTest extends \PHPUnit_Framework_TestCase
                 "memory" => true
             ),
         ));
-        $this->noteService = new NotesService($app["db"]);
+        $this->comicService = new ComicsService($app["db"]);
 
-        $stmt = $app["db"]->prepare("CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT,note VARCHAR NOT NULL)");
+        $stmt = $app["db"]->prepare("CREATE TABLE comics (id INTEGER PRIMARY KEY AUTOINCREMENT,comic VARCHAR NOT NULL)");
         $stmt->execute();
     }
 
     public function testGetAll()
     {
-        $data = $this->noteService->getAll();
+        $data = $this->comicService->getAll();
         $this->assertNotNull($data);
     }
 
     function testSave()
     {
-        $note = array("note" => "arny");
-        $data = $this->noteService->save($note);
-        $data = $this->noteService->getAll();
+        $comic = array("comic" => "arny");
+        $data = $this->comicService->save($comic);
+        $data = $this->comicService->getAll();
         $this->assertEquals(1, count($data));
     }
 
     function testUpdate()
     {
-        $note = array("note" => "arny1");
-        $this->noteService->save($note);
-        $note = array("note" => "arny2");
-        $this->noteService->update(1, $note);
-        $data = $this->noteService->getAll();
-        $this->assertEquals("arny2", $data[0]["note"]);
+        $comic = array("comic" => "arny1");
+        $this->comicService->save($comic);
+        $comic = array("comic" => "arny2");
+        $this->comicService->update(1, $comic);
+        $data = $this->comicService->getAll();
+        $this->assertEquals("arny2", $data[0]["comic"]);
 
     }
 
     function testDelete()
     {
-        $note = array("note" => "arny1");
-        $this->noteService->save($note);
-        $this->noteService->delete(1);
-        $data = $this->noteService->getAll();
+        $comic = array("comic" => "arny1");
+        $this->comicService->save($comic);
+        $this->comicService->delete(1);
+        $data = $this->comicService->getAll();
         $this->assertEquals(0, count($data));
     }
 

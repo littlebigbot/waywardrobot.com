@@ -6,32 +6,35 @@ use Silex\Application;
 
 class RoutesLoader
 {
-    private $app;
+	private $app;
 
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-        $this->instantiateControllers();
+	public function __construct(Application $app)
+	{
+		$this->app = $app;
+		$this->instantiateControllers();
 
-    }
+	}
 
-    private function instantiateControllers()
-    {
-        $this->app['notes.controller'] = $this->app->share(function () {
-            return new Controllers\NotesController($this->app['notes.service']);
-        });
-    }
+	private function instantiateControllers()
+	{
+		$this->app['comics.controller'] = $this->app->share(function () {
+			return new Controllers\comicsController($this->app['comics.service']);
+		});
+	}
 
-    public function bindRoutesToControllers()
-    {
-        $api = $this->app["controllers_factory"];
+	public function bindRoutesToControllers()
+	{
+		$api = $this->app["controllers_factory"];
 
-        $api->get('/notes', "notes.controller:getAll");
-        $api->post('/notes', "notes.controller:save");
-        $api->post('/notes/{id}', "notes.controller:update");
-        $api->delete('/notes/{id}', "notes.controller:delete");
+		$api->get('/comic', "comics.controller:getMostRecent");
+		$api->get('/comic/{id}', "comics.controller:getOne");
+		$api->get('/comics', "comics.controller:getAll");
+		$api->get('/comics/{number}/{page}', "comics.controller:getPage");
+		$api->post('/comics', "comics.controller:save");
+		$api->post('/comics/{id}', "comics.controller:update");
+		$api->delete('/comics/{id}', "comics.controller:delete");
 
-        $this->app->mount($this->app["api.endpoint"].'/'.$this->app["api.version"], $api);
-    }
+		$this->app->mount($this->app["api.endpoint"].'/'.$this->app["api.version"], $api);
+	}
 }
 

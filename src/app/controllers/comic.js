@@ -1,7 +1,9 @@
 define([
+  'angular',
   'app/app',
-  'app/providers/comics'
-], function(app, comicsFactory) {
+  'app/providers/comics',
+  'app/providers/currentComic'
+], function(angular, app, comicsFactory) {
   'use strict';
 
   /**
@@ -9,23 +11,16 @@ define([
    * @classdesc Controller for the comic view
    * @ngInject
    */
-  var ComicCtrl = function ($scope, comicsFactory) {
-    // // $http.get('/api/comic') when API is implemented
-    // $http.get('/api/comics.json')
-    //   .success(function(data){
-    //     // $scope.comic = data.comic; when API is implemented
-    //     $scope.comic = data[0];
-    //   });
+  var ComicCtrl = function($stateParams, comicsFactory, currentComicService) {
+    var _this = this;
 
-    // alert('what')
-
-    comicsFactory.getComic()
+    comicsFactory.getComic($stateParams.id)
       .then(function (response) {
-        $scope.comic = response.data;
-        window.r = response;
+        _this.comic = response.data[0];
       }, function (error) {
         console.log(error);
       });
+
   }
 
   return app.controller('ComicCtrl', ComicCtrl);

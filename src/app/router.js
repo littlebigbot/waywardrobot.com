@@ -1,6 +1,7 @@
 define([
   'app/app',
-  'app/controllers/comic'
+  'app/controllers/comic',
+  'app/controllers/archives'
   ], function(app) {
   'use strict';
 
@@ -8,11 +9,24 @@ define([
 
     $stateProvider
       .state('index', {
-        url: '/',
+        url: '',
         templateUrl: 'app/partials/comic.html',
-        controller: 'ComicCtrl as comic'
+        controller: 'ComicCtrl as ctrl',
+        data: {
+          pageTitle: 'Comics'
+        }
       })
-    $locationProvider.html5Mode(true);
+      .state('comic', {
+        url: '/:id/:slug',
+        templateUrl: 'app/partials/comic.html',
+        controller: 'ComicCtrl as ctrl'
+      })
+      .state('archives', {
+        url: '/archives',
+        templateUrl: 'app/partials/archives.html',
+        controller: 'ArchivesCtrl as ctrl'
+      });
+    // $locationProvider.html5Mode(true);
   }
 
   return app.config(router);

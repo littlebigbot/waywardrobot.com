@@ -6,7 +6,7 @@
 	"id": 6,
 	"slug": "bob",
 	"_links": {
-		"self": "/06/12/2012/bob"
+		"self": "/comic/6/bob"
 	},
 	"_images": {
 		"thumb": "testing_t.jpg",

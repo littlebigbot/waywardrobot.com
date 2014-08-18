@@ -8,11 +8,22 @@ define([
   // Basically everything but comments/post
   // though we might be able to afford that?
 
-  var comicsFactory = function ($q, $http) {
+  var comicsFactory = function ($q, $http, environment) {
     return {
-      getComics: function () {
-        var deferred  = $q.defer(),
-          httpPromise = $http.get('/api/comics.json');
+      getComics: function (page, number) {
+
+        var deferred    = $q.defer();
+
+        var parameters = '';
+
+        if(typeof page !== 'undefined') {
+          if(typeof number !== 'undefined') {
+            number = 10;
+          }
+          parameters = '/' + number + '/' + page;
+        }
+
+        var httpPromise = $http.get(environment.api + '/comics' + parameters);
 
         httpPromise.then(function (response) {
           deferred.resolve(response);
@@ -24,8 +35,8 @@ define([
       },
       getComic: function (id) {
 
-        var deferred  = $q.defer(),
-          httpPromise = $http.get('/api/comic.json' + (typeof id !== 'undefined' ? '/' + id : '' ));
+        var deferred    = $q.defer(),
+            httpPromise = $http.get(environment.api + '/comic' + (typeof id !== 'undefined' ? '/' + id : '' ));
 
         httpPromise.then(function (response) {
           deferred.resolve(response);
@@ -37,8 +48,6 @@ define([
       }
     }
   }
-
-  comicsFactory.$inject = ['$q', '$http'];
 
   app.factory('comicsFactory', comicsFactory);
 });

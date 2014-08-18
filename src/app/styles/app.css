@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 *, *:before
 *:after {
   -webkit-box-sizing: border-box;
@@ -15,47 +11,287 @@ button,
 textarea {
   margin: 0; }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
-  padding: 0;
   border: 0;
-  font-size: 100%;
+  padding: 0;
+  vertical-align: baseline;
   font: inherit;
-  vertical-align: baseline; }
+  font-size: 100%; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block; }
 
 body {
   line-height: 1; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
+  blockquote:before, blockquote:after,
+  q:before,
+  q:after {
     content: '';
     content: none; }
 
-ul, ol {
+body {
+  line-height: 1.375rem;
+  color: gray(1); }
+
+body,
+input,
+select,
+button,
+textarea {
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+h1 {
+  line-height: 2.75rem;
+  font-size: 2.25rem;
+  font-weight: 600; }
+
+h2 {
+  line-height: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 600; }
+
+h3 {
+  line-height: 1.375rem;
+  font-size: 1.25rem; }
+
+h4 {
+  line-height: 1.22222222rem;
+  font-size: 1.125rem; }
+
+h5 {
+  line-height: 1.375rem;
+  font-size: 1rem; }
+
+h6 {
+  line-height: 1rem;
+  font-size: .875rem; }
+
+b,
+strong {
+  font-weight: 600; }
+
+i,
+em {
+  font-style: italic; }
+
+a {
+  text-decoration: none;
+  color: #81C0B5; }
+  a:hover {
+    color: #5fafa1; }
+  a:active {
+    color: #FD6E8A; }
+  a:visited {
+    color: #499285; }
+  a:disabled {
+    color: #848D82; }
+
+/* ul, ol {
   padding-left: 3.25em;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
-ul li:before {
-  content: "·";
-  font-size: 2em;
-  font-family: "Times New Roman";
-  float: left;
-  margin-left: -0.5em; }
-
-ol:first-child {
-  counter-reset: customlistcounter; }
-ol > li {
-  counter-increment: customlistcounter; }
-  ol > li:before {
-    content: counter(customlistcounter) " ";
-    font-weight: 600;
+ul {
+  li:before {
+    content: "·";
+    font-size: 2em;
+    font-family: "Times New Roman";
     float: left;
-    margin-left: -1.25em; }
+    margin-left: -0.5em;
+  }
+}
+
+ol {
+
+  &:first-child {
+    counter-reset: customlistcounter;
+  }
+
+  > li {
+    counter-increment: customlistcounter;
+
+    &:before {
+      content: counter(customlistcounter) " ";
+      font-weight: 600;
+      float: left;
+      margin-left: -1.25em;
+    }
+  }
+}
+ */
+/*
+#0B6570
+#280607
+#81C0B5
+#B4D2BA
+#F7EBC3
+*/
+html, body {
+  height: 100%; }
+
+body {
+  background-color: #e2e2e2; }
+
+header.menu {
+  background: #280607;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  padding: 10px;
+  left: 0; }
+  header.menu .give-me-money {
+    float: right; }
+    header.menu .give-me-money li {
+      float: left; }
+  header.menu .social-links {
+    float: right; }
+
+body {
+  padding-top: 50px; }
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  background: #0B6570;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 15%; }
+  .sidebar .comics-list-wrap {
+    height: 100%;
+    width: 100%;
+    overflow: auto; }
+  .sidebar .archives-link {
+    background: #04262a;
+    width: 100%;
+    display: block;
+    height: 50px;
+    text-align: center;
+    padding: 5px; }
+
+.comics-list li {
+  display: block;
+  width: 90%;
+  margin: 2% auto;
+  position: relative;
+  overflow: hidden; }
+  .comics-list li img {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    z-index: 2; }
+  .comics-list li h3 {
+    position: absolute;
+    top: 100%; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  background: #B4D2BA; }
+
+article.comic {
+  margin-left: 15%; }

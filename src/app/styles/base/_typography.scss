@@ -1,0 +1,63 @@
+//-------------------------------------------------------*/
+//  _typography.scss
+//  ================
+//  Derived from:
+//  http://meyerweb.com/eric/tools/css/reset/
+//
+//-------------------------------------------------------*/
+
+body {
+  line-height: 1.375rem;
+  color: gray(1);
+}
+
+body,
+input,
+select,
+button,
+textarea {
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  line-height: 2.75rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+h2 {
+  line-height: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  line-height: 1.375rem;
+  font-size: 1.25rem;
+}
+
+h4 {
+  line-height: 1.22222222rem;
+  font-size: 1.125rem;
+}
+
+h5 {
+  line-height: 1.375rem;
+  font-size: 1rem;
+}
+
+h6 {
+  line-height: 1rem;
+  font-size: .875rem;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+i,
+em {
+  font-style: italic;
+}

@@ -1,20 +1,20 @@
 <aside class="sidebar">
 
-	<a class="archives-link" href="/archives">Archives</a>
+  <a class="archives-link" href="#/archives">Archives</a>
 
-	<a class="sidebar-expander"></a>
+  <a class="sidebar-expander"></a>
 
-	<nav class="comic-list-wrap">
+  <nav class="comics-list-wrap" scroller>
 
-		<ul class="comics-list" ng-repeat="comic in comics">
-			<li>
-				<a href="{{comic._links.self}}">
-					<img ng-src="images/comics/{{comic._images.thumb}}" alt="{{comic.title}}" />
-					<h3>{{comic.title}}</h3>
-				</a>
-			</li>
-		</ul>
+    <ul class="comics-list">
+      <li ng-repeat="comic in ctrl.comics">
+        <a ng-href="#{{comic.id + '/' + comic.slug}}">
+          <img ng-src="images/comics/{{comic._images.comic_thumb}}" alt="{{comic.title}}" />
+          <h3>{{comic.title}}</h3>
+        </a>
+      </li>
+    </ul>
 
-	</nav>
+  </nav>
 
 </aside>
