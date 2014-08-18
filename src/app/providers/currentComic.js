@@ -8,16 +8,18 @@ define([
   // Basically everything but comments/post
   // though we might be able to afford that?
 
-  var currentComicService = function ($stateParams) {
-    console.log($stateParams)
-    var currentComic = $stateParams.id;
+  var currentComicService = function () {
+    var currentComic;
 
     return {
-        getId: function () {
+        getCurrentComic: function () {
             return currentComic;
         },
-        setId: function(value) {
+        setCurrentComic: function(value) {
             currentComic = value;
+        },
+        isCurrentComic: function(value) {
+          return currentComic === value;
         }
     };
   }

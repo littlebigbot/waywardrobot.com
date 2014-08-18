@@ -28,8 +28,7 @@ requirejs.config({
     'app/directives/bottom',
     'app/directives/sidebar',
     'app/directives/topnav',
-    'app/directives/scroller',
-    'app/directives/updateTitle'
+    'app/directives/scroller'
   ]
 });
 

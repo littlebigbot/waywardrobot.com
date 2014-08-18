@@ -15,10 +15,8 @@ define([
 
     _this.page = 0;
 
-    console.log(currentComicService.getId());
-
-    $scope.loadMoreComics = function(){
-      _this.loadMoreComics();
+    $scope.isCurrentComic = function(id){
+      return currentComicService.isCurrentComic(id);
     }
     if(typeof _this.comics === 'undefined') {
       comicsFactory.getComics(_this.page, 10)
@@ -30,9 +28,9 @@ define([
     }
   }
 
-  SidebarCtrl.prototype.loadMoreComics = function() {
-
-  }
+  // SidebarCtrl.prototype.isCurrentComic = function(currentComicService) {
+  //   return currentComicService.isCurrentComic();
+  // }
 
   return app.controller('SidebarCtrl', SidebarCtrl);
 });

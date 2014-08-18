@@ -11,12 +11,14 @@ define([
    * @classdesc Controller for the comic view
    * @ngInject
    */
-  var ComicCtrl = function($stateParams, comicsFactory, currentComicService) {
+  var ComicCtrl = function($rootScope, $stateParams, comicsFactory, currentComicService) {
     var _this = this;
 
     comicsFactory.getComic($stateParams.id)
       .then(function (response) {
         _this.comic = response.data[0];
+        $rootScope.currentPageTitle = _this.comic.title;
+        currentComicService.setCurrentComic(_this.comic.id);
       }, function (error) {
         console.log(error);
       });

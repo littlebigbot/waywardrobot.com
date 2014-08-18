@@ -7,7 +7,7 @@
   <nav class="comics-list-wrap" scroller>
 
     <ul class="comics-list">
-      <li ng-repeat="comic in ctrl.comics">
+      <li ng-repeat="comic in ctrl.comics" ng-class="{current:isCurrentComic(comic.id)}">
         <a ui-sref="comic({id: comic.id, slug: comic.slug})">
           <img ng-src="images/comics/{{comic._images.comic_thumb}}" alt="{{comic.title}}" />
           <h3>{{comic.title}}</h3>

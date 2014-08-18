@@ -11,10 +11,7 @@ define([
       .state('index', {
         url: '',
         templateUrl: 'app/partials/comic.html',
-        controller: 'ComicCtrl as ctrl',
-        data: {
-          pageTitle: 'Comics'
-        }
+        controller: 'ComicCtrl as ctrl'
       })
       .state('comic', {
         url: '/:id/:slug',
@@ -24,7 +21,10 @@ define([
       .state('archives', {
         url: '/archives',
         templateUrl: 'app/partials/archives.html',
-        controller: 'ArchivesCtrl as ctrl'
+        controller: 'ArchivesCtrl as ctrl',
+        data: {
+          pageTitle: 'Archives'
+        }
       });
     // $locationProvider.html5Mode(true);
   }
