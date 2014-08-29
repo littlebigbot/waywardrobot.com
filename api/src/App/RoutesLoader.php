@@ -26,10 +26,9 @@ class RoutesLoader
 	{
 		$api = $this->app["controllers_factory"];
 
-		$api->get('/comic', "comics.controller:getMostRecent");
-		$api->get('/comic/{id}', "comics.controller:getOne");
+		$api->get('/comics/newest', "comics.controller:getNewest");
+		$api->get('/comics/{id}', "comics.controller:getOne");
 		$api->get('/comics', "comics.controller:getAll");
-		$api->get('/comics/{number}/{page}', "comics.controller:getPage");
 		$api->post('/comics', "comics.controller:save");
 		$api->post('/comics/{id}', "comics.controller:update");
 		$api->delete('/comics/{id}', "comics.controller:delete");

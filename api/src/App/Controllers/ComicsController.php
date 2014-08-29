@@ -16,9 +16,9 @@ class ComicsController
 		$this->comicsService = $service;
 	}
 
-	public function getMostRecent()
+	public function getNewest()
 	{
-		return new JsonResponse($this->comicsService->getMostRecent());
+		return new JsonResponse($this->comicsService->getNewest());
 	}
 
 	public function getAll()

@@ -1,8 +1,8 @@
 define([
+  'angular',
   'app/app',
-  'app/providers/comics',
-  'app/providers/currentComic'
-], function(app, comicsFactory) {
+  'app/providers/comics-factory'
+], function(angular, app) {
   'use strict';
 
   /**
@@ -10,27 +10,18 @@ define([
    * @classdesc Controller for the Sidebar view
    * @ngInject
    */
-  var SidebarCtrl = function ($scope, comicsFactory, environment, currentComicService) {
+  var SidebarCtrl = function ($rootScope, comicsFactory) {
     var _this = this;
 
-    _this.page = 0;
 
-    $scope.isCurrentComic = function(id){
-      return currentComicService.isCurrentComic(id);
-    }
-    if(typeof _this.comics === 'undefined') {
-      comicsFactory.getComics(_this.page, 10)
-        .then(function (response) {
-          _this.comics = response.data;
-        }, function (error) {
-          console.log(error);
-        });
-    }
-  }
+    comicsFactory.getComics()
+      .then(function(result) {
+        $rootScope.data.comics = result.data;
+      }, function(error) {
+        console.log(error);
+      });
 
-  // SidebarCtrl.prototype.isCurrentComic = function(currentComicService) {
-  //   return currentComicService.isCurrentComic();
-  // }
+  };
 
   return app.controller('SidebarCtrl', SidebarCtrl);
 });

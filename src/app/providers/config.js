@@ -1,6 +1,7 @@
 define([
   'angular'
 ], function(angular) {
+  'use strict';
 
   var config = angular.module('config', []);
 
@@ -11,6 +12,11 @@ define([
     production: {
       'api': 'http://api.waywardrobot.com'
     }
+  };
+
+  var configs = {
+    title: 'Wayward Robot',
+    pageSize: 100
   };
 
   var environment = environments.development;

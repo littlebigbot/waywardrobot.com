@@ -1,7 +1,6 @@
 define([
   'app/app',
-  'app/providers/comics',
-  'jquery'
+  'app/providers/comics-factory'
 ], function(app, comicsFactory) {
   'use strict';
 
@@ -10,13 +9,13 @@ define([
    * @classdesc Controller for the archives view
    * @ngInject
    */
-  var ArchivesCtrl = function ($scope, comicsFactory, environment) {
+  var ArchivesCtrl = function ($rootScope, comicsFactory) {
     var _this = this;
 
-    if(typeof _this.comics === 'undefined') {
-      comicsFactory.getComics()
+    if(!$rootScope.data.comics.length) {
+      comicsFactory.fetchComics()
         .then(function (response) {
-          _this.comics = response.data;
+          $rootScope.data.comics = response.data;
         }, function (error) {
           console.log(error);
         });

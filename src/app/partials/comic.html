@@ -1,37 +1,37 @@
 <article class="comic">
 
-	<div class="above-fold">
+  <div class="above-fold">
 
-		<div class="ads">
+    <div class="ads">
 
-		</div>
+    </div>
 
-		<hgroup>
-			<h1>{{ctrl.comic.title}}</h1>
-			<h3>{{ctrl.comic.subtitle}}</h3>
-      <time datetime="{{ctrl.comic.date}}">{{ctrl.comic.date | date:'MM:dd:yyyy'}}</time>
-		</hgroup>
-		<div class="the-comic">
-			<img ng-src="{{'/images/comics/' + ctrl.comic._images.full}}" alt="{{ctrl.comic.title}}" />
-		</div>
-		<ul class="share-links">
-			<li>
-				<a href="FACEBOOKSHARELINK" target="_blank">Facebook</a>
-			</li>
-		</ul>
+    <hgroup>
+      <h1>{{$root.data.comic.title}}</h1>
+      <h3>{{$root.data.comic.subtitle}}</h3>
+      <time datetime="{{$root.data.comic.date}}">{{$root.data.comic.date | date:'MM:dd:yyyy'}}</time>
+    </hgroup>
+    <div class="the-comic">
+      <img ng-src="{{'/images/comics/' + $root.data.comic._images.full}}" alt="{{$root.data.comic.title}}" />
+    </div>
+    <ul class="share-links">
+      <li>
+        <a href="FACEBOOKSHARELINK" target="_blank">Facebook</a>
+      </li>
+    </ul>
 
-	</div>
+  </div>
 
-	<div class="below-fold">
+  <div class="below-fold">
 
-		<section class="post">
-			{{ctrl.comic.post}}
-		</section>
+    <section class="post">
+      {{$root.data.comic.post}}
+    </section>
 
-		<aside class="ads">
+    <aside class="ads">
 
-		</aside>
+    </aside>
 
-	</div>
+  </div>
 
 </article>
