@@ -1,7 +1,8 @@
 define([
   'app/app',
+  'jquery',
   'app/controllers/sidebar'
-], function(app) {
+], function(app, $) {
   'use strict';
 
   var sidebarDirective = function () {
@@ -10,10 +11,12 @@ define([
       replace: true,
       scope: {},
       templateUrl: 'app/partials/sidebar.html',
-      controller: 'SidebarCtrl as ctrl',
-      // controllerAs: 'comics',
-      link: function () {
-
+      controller: 'SidebarCtrl',
+      controllerAs: 'ctrl',
+      link: function ($scope) {
+        $scope.toggleSidebar = function(){
+          $('.container').toggleClass('open-sidebar');
+        }
       }
     };
   }

@@ -16,13 +16,17 @@
 </head>
 <body>
 
-  <top-nav></top-nav>
+  <div class="container">
 
-  <sidebar></sidebar>
+    <top-nav></top-nav>
 
-  <div ui-view></div>
+    <sidebar></sidebar>
 
-  <bottom></bottom>
+    <main role="main" ui-view></main>
+
+    <bottom></bottom>
+
+  </div>
 
   <!-- build:js js/main.js -->
   <script src="vendor/requirejs/require.js" data-main="main.js"></script>

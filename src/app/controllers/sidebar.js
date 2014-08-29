@@ -13,7 +13,6 @@ define([
   var SidebarCtrl = function ($rootScope, comicsFactory) {
     var _this = this;
 
-
     comicsFactory.getComics()
       .then(function(result) {
         $rootScope.data.comics = result.data;
