@@ -16,7 +16,9 @@ define([
       link: function ($scope) {
         $scope.toggleSidebar = function(){
           $('.container').toggleClass('open-sidebar');
-        }
+        };
+        // $().
+
       }
     };
   }

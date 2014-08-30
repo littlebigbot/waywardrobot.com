@@ -75,6 +75,7 @@ header {
   padding:10px;
   left: 0;
   right: 0;
+  z-index: 2;
 
   .give-me-money {
     float: right;
@@ -87,11 +88,6 @@ header {
   .social-links {
     float: right;
   }
-}
-
-
-body {
-  padding-top:50px;
 }
 
 
@@ -122,21 +118,36 @@ body {
 
 .open-sidebar {
   .sidebar {
-    left: 0;
+    left: 0%;
   }
 
-  main {
-    left: 15%;
-  }
+  main,
   footer,
   header {
     left: 15%;
   }
+  main {
+    width: 85%;
+  }
 }
 
+main,
+footer,
+header {
+  left: 0%;
+}
+
+.container {
+  position: relative;
+  > * {
+    @include transition(all .15s);
+  }
+}
 main {
   position: relative;
-  margin-left: 2.5%;
+  padding: 50px 2.5%;
+  right: 0;
+  width: 100%;
 }
 
 .sidebar-expander {
@@ -156,9 +167,11 @@ main {
     margin:2% auto;
     position: relative;
     overflow: hidden;
+    &.active {
+      border: 3px solid #fff;
+    }
     img {
       width: 100%;
-      height: 200px; //remove
       position: relative;
       z-index: 2;
     }
@@ -174,6 +187,7 @@ footer {
   bottom:0;
   left: 0;
   right: 0;
-  padding:10px;
+  height: 50px;
   background: #B4D2BA;
+  z-index: 1;
 }

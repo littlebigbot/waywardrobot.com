@@ -27,14 +27,14 @@ requirejs.config({
     // Adding directives hurr
     'app/directives/bottom',
     'app/directives/sidebar',
-    'app/directives/topnav',
-    'app/directives/scroller'
+    'app/directives/topnav'
   ]
 });
 
 require([
   'angular',
-  'app/router'
+  'app/router',
+  'app/controllers/app'
 ], function (angular) {
   angular.bootstrap(document, ['app']);
 });
