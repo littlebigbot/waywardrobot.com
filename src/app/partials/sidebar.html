@@ -4,12 +4,12 @@
 
   <a class="sidebar-expander" ng-click="toggleSidebar()"></a>
 
-  <nav class="comics-list-wrap" scroller>
+  <nav class="comics-list-wrap">
 
     <ul class="comics-list">
       <li ui-sref-active="active" ng-repeat="comic in $root.data.comics" ng-class="{current:isCurrentComic(comic.id)}">
         <a ui-sref="comic({id: comic.id, slug: comic.slug})">
-          <img ng-src="images/comics/{{comic._images.comic_thumb}}" alt="{{comic.title}}" />
+          <img ng-src="images/comics/{{comic.comic_thumb}}" alt="{{comic.title}}" />
           <h3>{{comic.title}}</h3>
         </a>
       </li>
