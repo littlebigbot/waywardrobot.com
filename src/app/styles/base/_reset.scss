@@ -6,14 +6,6 @@
 //
 //-------------------------------------------------------*/
 
-* {
-  &,
-  &:before
-  &:after {
-    @include box-sizing(border-box);
-  }
-}
-
 input,
 select,
 button,

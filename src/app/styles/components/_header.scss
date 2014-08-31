@@ -1,0 +1,22 @@
+header {
+  background: #280607;
+  position: fixed;
+  height: 50px;
+  top:0;
+  padding:10px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  .give-me-money {
+    float: right;
+
+    li {
+      float: left;
+    }
+  }
+
+  .social-links {
+    float: right;
+  }
+}

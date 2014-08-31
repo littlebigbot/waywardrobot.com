@@ -1,0 +1,57 @@
+.sidebar {
+  position: fixed;
+  height: 100%;
+  background: #0B6570;
+  z-index: 100;
+  top:0;
+  left: -15%;
+  width: 15%;
+
+  .comics-list-wrap {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .archives-link {
+    background: darken(#0B6570, 15%);
+    width: 100%;
+    display: block;
+    height: 50px;
+    text-align: center;
+    padding:5px;
+  }
+}
+
+.sidebar-expander {
+  position: absolute;
+  top:100px;
+  left: 100%;
+  width: 30px;
+  height: 40px;
+  background: #000;
+  cursor: pointer;
+}
+
+
+.comics-list {
+  li {
+    display: block;
+    width: 90%;
+    margin:2% auto;
+    position: relative;
+    overflow: hidden;
+    &.active {
+      border: 3px solid #fff;
+    }
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    h3 {
+      position: absolute;
+      top:100%;
+    }
+  }
+}

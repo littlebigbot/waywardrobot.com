@@ -1,11 +1,17 @@
-@import "../../vendor/bourbon/dist/bourbon";
+@import 'vendor/bootstrap';
+@import 'vendor/font-awesome';
+@import 'vendor/bourbon';
+@import 'vendor/overwrites';
 
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/utilities";
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/utilities';
 
-@import "base/reset";
-@import "base/typography";
-@import "base/global";
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/global';
 
-
+@import 'components/header';
+@import 'components/sidebar';
+@import 'components/main';
+@import 'components/footer';

@@ -1,0 +1,11 @@
+@mixin movement-animation($speed: .3s, $easing: $movement-easing) {
+  @include transition-property(max-height, height, width, max-width, font-size, background-position, top, left, right, bottom, margin, padding, transform);
+  @include transition-duration($speed);
+  @include transition-timing-function($easing);
+}
+
+@mixin color-animation($speed: .3s, $easing: $color-easing) {
+  @include transition-property(opacity, color, background-color, border-color, box-shadow);
+  @include transition-duration($speed);
+  @include transition-timing-function($easing);
+}

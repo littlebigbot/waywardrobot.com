@@ -24,6 +24,6 @@
     "requirejs": "~2.1.14",
     "bootstrap-sass": "~3.0.2",
     "bourbon": "~4.0.2",
-    "ngInfiniteScroll": "~1.1.2"
+    "font-awesome": "~4.2.0"
   }
 }

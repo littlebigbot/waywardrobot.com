@@ -1,3 +1,36 @@
+* {
+  &,
+  &::before
+  &::after {
+    @include box-sizing(border-box);
+  }
+}
+
+// a {
+//   @include color-animation();
+//   text-decoration: none;
+//   color: color('blue');
+
+//   &:visited {
+//     color: color('purple');
+//   }
+
+//   &:hover {
+//     color: color('blue', 'dark');
+//   }
+
+//   &:active {
+//     color: color('blue', 'light');
+//   }
+
+//   &.disabled,
+//   &:disabled {
+//     cursor: not-allowed;
+//     color: gray(4);
+//   }
+// }
+
+
 a {
   text-decoration: none;
   color: #81C0B5;
@@ -19,12 +52,12 @@ a {
   }
 }
 
-/* ul, ol {
+%ul, %ol {
   padding-left: 3.25em;
   list-style-type: none;
 }
 
-ul {
+%ul {
   li:before {
     content: "·";
     font-size: 2em;
@@ -34,7 +67,7 @@ ul {
   }
 }
 
-ol {
+%ol {
 
   &:first-child {
     counter-reset: customlistcounter;
@@ -51,69 +84,13 @@ ol {
     }
   }
 }
- */
 
-/*
-#0B6570
-#280607
-#81C0B5
-#B4D2BA
-#F7EBC3
-*/
-
-html, body {height: 100%;}
+html, body {
+  height: 100%;
+}
 
 body{
   background-color: #e2e2e2;
-}
-
-header {
-  background: #280607;
-  position: fixed;
-  height: 50px;
-  top:0;
-  padding:10px;
-  left: 0;
-  right: 0;
-  z-index: 2;
-
-  .give-me-money {
-    float: right;
-
-    li {
-      float: left;
-    }
-  }
-
-  .social-links {
-    float: right;
-  }
-}
-
-
-.sidebar {
-  position: fixed;
-  height: 100%;
-  background: #0B6570;
-  z-index: 100;
-  top:0;
-  left: -15%;
-  width: 15%;
-
-  .comics-list-wrap {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  }
-
-  .archives-link {
-    background: darken(#0B6570, 15%);
-    width: 100%;
-    display: block;
-    height: 50px;
-    text-align: center;
-    padding:5px;
-  }
 }
 
 .open-sidebar {
@@ -142,52 +119,4 @@ header {
   > * {
     @include transition(all .15s);
   }
-}
-main {
-  position: relative;
-  padding: 50px 2.5%;
-  right: 0;
-  width: 100%;
-}
-
-.sidebar-expander {
-  position: absolute;
-  top:100px;
-  left: 100%;
-  width: 30px;
-  height: 40px;
-  background: #000;
-  cursor: pointer;
-}
-
-.comics-list {
-  li {
-    display: block;
-    width: 90%;
-    margin:2% auto;
-    position: relative;
-    overflow: hidden;
-    &.active {
-      border: 3px solid #fff;
-    }
-    img {
-      width: 100%;
-      position: relative;
-      z-index: 2;
-    }
-    h3 {
-      position: absolute;
-      top:100%;
-    }
-  }
-}
-
-footer {
-  position: absolute;
-  bottom:0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: #B4D2BA;
-  z-index: 1;
 }
