@@ -9,5 +9,5 @@ npm-debug.log
 # For running/testing locally:
 src/vendor
 src/css
-src/images/comics/
+src/images/comics
 src/fonts/font-awesome
