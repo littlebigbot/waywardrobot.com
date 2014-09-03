@@ -1,9 +1,13 @@
+# General stuff one should ignore
 node_modules
 .DS_Store
 .htaccess
 bower_components
 npm-debug.log
-/src/vendor
 .sass-cache
-/src/app/styles/*.css
+
+# For running/testing locally:
+/src/vendor
+/src/css/
 /src/images/comics/
+/src/fonts/font-awesome/

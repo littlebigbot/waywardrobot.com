@@ -16,6 +16,10 @@ var gulp          = require('gulp'),
     replace       = require('gulp-replace'),
     argv          = require('yargs').argv;
 
+/*
+Need some sort of setup task to link dist/fonts -> src/fonts and dist/images/comics -> src/images/comics
+*/
+
 // Config
 var paths = {
   src: 'src/',
@@ -34,7 +38,7 @@ gulp.task('styles', function() {
   ])
       .pipe(sass())
       .on('error', function(err) { console.log(err.message); })
-      .pipe(gulp.dest(isProd ? paths.build + 'css/' : paths.app + 'styles/'));
+      .pipe(gulp.dest(isProd ? paths.build + 'css/' : paths.src + 'css/'));
 });
 
 gulp.task('html', function() {
@@ -122,6 +126,14 @@ gulp.task('copy-images', function() {
       .pipe(gulp.dest(paths.build + 'images'));
 });
 
+gulp.task('copy-fonts', function() {
+  gulp.src([
+    //Glob format important to keep font-awesome folder
+    paths.src + 'vendor/**/font-awesome/fonts/*{eot,svg,ttf,woff}'
+  ])
+      .pipe(gulp.dest(paths.build + 'fonts'));
+});
+
 gulp.task('config-replace', ['scripts'], function(){
   gulp.src([paths.build + 'js/main.js'])
     .pipe(wait(1000))
@@ -129,6 +141,10 @@ gulp.task('config-replace', ['scripts'], function(){
     .pipe(gulp.dest(paths.build + 'js'));
 });
 
+gulp.task('prepare', [
+  'copy-images',
+  'copy-fonts'
+]);
 
 gulp.task('build', function() {
   isProd = true;
