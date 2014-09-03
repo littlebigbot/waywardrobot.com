@@ -9,27 +9,31 @@
     <hgroup>
       <h1 class="title" data-ng-bind="$root.data.comic.title"></h1>
       <h3 class="subtitle" data-ng-bind="$root.data.comic.subtitle"></h3>
-      <time datetime="{{$root.data.comic.date}}">{{$root.data.comic.date | date:'MM:dd:yyyy'}}</time>
+
+      <a class="share">
+        SHARE
+        <ul class="share-links">
+          <li>
+            <a href="FACEBOOKSHARELINK" target="_blank">Facebook</a>
+          </li>
+        </ul>
+      </a>
     </hgroup>
-    <div class="navigation">
-      <a ng-click="prevComic()" class="previous" ng-class="{disabled: isFirst()}">Previous</a>
-      <a ng-click="nextComic()" class="next" ng-class="{disabled: isLast()}">Next</a>
-    </div>
     <div class="the-comic">
+      <div class="navigation">
+        <a ng-click="prevComic()" class="previous" ng-class="{disabled: isFirst()}"><i class="fa fa-chevron-circle-left"></i><span>Previous</span></a>
+        <a ng-click="nextComic()" class="next" ng-class="{disabled: isLast()}"><i class="fa fa-chevron-circle-right"></i><span>Next</span></a>
+      </div>
       <img ng-src="{{'/images/comics/' + $root.data.comic.comic_full}}" alt="{{$root.data.comic.title}}" />
     </div>
-    <ul class="share-links">
-      <li>
-        <a href="FACEBOOKSHARELINK" target="_blank">Facebook</a>
-      </li>
-    </ul>
 
   </div>
 
   <div class="below-fold">
 
     <section class="post">
-      {{$root.data.comic.post}}
+      <h2>NOTES</h2>
+      {{$root.data.comic.post_content}}
     </section>
 
     <aside class="ads">

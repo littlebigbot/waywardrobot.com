@@ -4,10 +4,17 @@ header {
   height: 50px;
   top: 0;
   padding: 10px;
+  padding-left: 10%;
   left: 0;
   right: 0;
   z-index: 2;
   border-bottom:5px solid color('yellow', 'dark');
+
+  .logo {
+    margin:0;
+    float: left;
+    font-size: 140%;
+  }
 
   a {
     color: color('purple');
