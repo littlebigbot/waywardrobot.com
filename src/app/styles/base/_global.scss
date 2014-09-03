@@ -33,19 +33,20 @@
 
 a {
   text-decoration: none;
-  color: #81C0B5;
+  font-weight: 500;
+  color: color('yellow');
 
   &:hover {
-    color: darken(#81C0B5, 10%);
+    color: color('orange');
   }
 
   &:active {
-    color: #FD6E8A;
+    color: color('red');
   }
 
-  &:visited {
-    color: darken(#81C0B5, 20%);
-  }
+  // &:visited {
+  //   color: color('blue');
+  // }
 
   &:disabled {
     color: #848D82;
@@ -90,7 +91,8 @@ html, body {
 }
 
 body{
-  background-color: #e2e2e2;
+  background-color: color('yellow', 'light');
+  // color: gray(4);
 }
 
 .open-sidebar {

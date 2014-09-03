@@ -1,0 +1,43 @@
+$colors: (
+  'blue': (
+    'base': #53777A,
+    'dark': #3a5c5f,
+    'light': #53777A
+  ),
+  'yellow': (
+    'base': #ECD078,
+    'dark': #d2b65f,
+    'light': #f2e8c8
+  ),
+  'orange': (
+    'base': #D95B43,
+    'dark': #D95B43,
+    'light': #D95B43
+  ),
+  'purple': (
+    'base': #542437,
+    'dark': #441b2b,
+    'light': #542437
+  ),
+  'green': (
+    'base': #00c8a2,
+    'dark': #00aa8a,
+    'light': #80e4d1
+  ),
+  'red': (
+    'base': #C02942,
+    'dark': #aa1f36,
+    'light': #C02942
+  )
+);
+
+// Grays. From darkest to lightest
+$grays: (
+  #333333,
+  #444444,
+  #666666,
+  #bbbbbb,
+  #cccccc,
+  #f2f2f2,
+  #ffffff
+);

@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   height: 100%;
-  background: #0B6570;
+  background: color('red');
   z-index: 100;
   top:0;
   left: -15%;
@@ -11,15 +11,19 @@
     height: 100%;
     width: 100%;
     overflow: auto;
+    border-right:5px solid darken(color('red'), 10%);
   }
 
   .archives-link {
-    background: darken(#0B6570, 15%);
+    background: color('purple');
     width: 100%;
     display: block;
     height: 50px;
     text-align: center;
     padding:5px;
+    color: color('blue');
+    margin-right:-5px;
+    border-bottom:5px solid darken(color('purple'), 5%);
   }
 }
 
@@ -28,7 +32,7 @@
   top:100px;
   left: 100%;
   width: 30px;
-  height: 40px;
+  height: 50px;
   background: #000;
   cursor: pointer;
 }
@@ -38,16 +42,18 @@
   li {
     display: block;
     width: 90%;
-    margin:2% auto;
+    margin:5px auto;
     position: relative;
     overflow: hidden;
+    padding: 5px;
     &.active {
-      border: 3px solid #fff;
+      background: color('yellow');
     }
     img {
       width: 100%;
       position: relative;
       z-index: 2;
+      display: block;
     }
     h3 {
       position: absolute;

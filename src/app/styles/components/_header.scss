@@ -1,12 +1,17 @@
 header {
-  background: #280607;
+  background: color('yellow');
   position: fixed;
   height: 50px;
-  top:0;
-  padding:10px;
+  top: 0;
+  padding: 10px;
   left: 0;
   right: 0;
   z-index: 2;
+  border-bottom:5px solid color('yellow', 'dark');
+
+  a {
+    color: color('purple');
+  }
 
   .give-me-money {
     float: right;

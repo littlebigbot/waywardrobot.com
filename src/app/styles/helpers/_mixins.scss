@@ -1,3 +1,11 @@
+@function color($color, $tone: 'base') {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+@function gray($index: 1) {
+  @return nth($grays, $index);
+}
+
 @mixin movement-animation($speed: .3s, $easing: $movement-easing) {
   @include transition-property(max-height, height, width, max-width, font-size, background-position, top, left, right, bottom, margin, padding, transform);
   @include transition-duration($speed);

@@ -4,6 +4,7 @@ footer {
   left: 0;
   right: 0;
   height: 50px;
-  background: #B4D2BA;
+  background: color('blue');
+  border-top: 5px solid color('blue', dark);
   z-index: 1;
 }
