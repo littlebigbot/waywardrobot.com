@@ -4,19 +4,40 @@
   text-align: center;
   display: inline-block;
   padding: 50px;
+  position: relative;
 }
 
 
-.comic {
+.navigation {
+
+  $circle-size: 50px;
+
   .previous,
   .next {
     background: color('blue');
     display: block;
-    width: 50px;
-    height: 50px;
+    width: $circle-size;
+    height: $circle-size;
+    position: absolute;
     border-radius: 50%;
+    top:200px;
+    font-size: $circle-size + 1px;
+
     &:hover {
       cursor: pointer;
+      background: color('blue', 'dark');
     }
+
+    span {
+      @extend %sr-only;
+    }
+  }
+
+  .previous {
+    left: $circle-size * -1.5;
+  }
+
+  .next {
+    right: $circle-size * -1.5;
   }
 }
