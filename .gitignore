@@ -7,7 +7,7 @@ npm-debug.log
 .sass-cache
 
 # For running/testing locally:
-/src/vendor
-/src/css/
-/src/images/comics/
-/src/fonts/font-awesome/
+src/vendor
+src/css
+src/images/comics/
+src/fonts/font-awesome
