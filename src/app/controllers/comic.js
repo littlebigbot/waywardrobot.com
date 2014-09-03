@@ -15,6 +15,7 @@ define([
     var id = $stateParams.id;
 
     $rootScope.currentPageTitle = '';
+
     if($rootScope.data.comics.length) {
       $rootScope.data.comics.some(function(comic, i) {
         if(comic.id === id) {
@@ -33,38 +34,77 @@ define([
         });
     }
 
-    console.log($state);
-    // $rootScope.broadcast('adjustSidebar');
+    $scope.$on('nextComic', function(event) {
+      this.nextComic(event);
+    });
 
     $scope.$on('previousComic', function(event) {
-      $rootScope.data.comics.some(function(comic, i) {
-        if(comic.id === $rootScope.data.comic.id) {
-          if(i - 1 > 0) {
-            var prevComic = $rootScope.data.comics[i - 1];
-            $state.go('comic', {id: prevComic.id, slug: prevComic.slug});
-          }
-          else {
-            return i;
-          }
-        }
-      });
+      _this.prevComic(event);
     });
 
-    $scope.$on('nextComic', function(event) {
-      $rootScope.data.comics.some(function(comic, i) {
-        if(comic.id === $rootScope.data.comic.id) {
-          if(i + 1 < $rootScope.data.comics.length) {
-            var nextComic = $rootScope.data.comics[i + 1];
-            $state.go('comic', {id: nextComic.id, slug: nextComic.slug});
-          }
-          else {
-            return i;
-          }
-        }
-      });
-    });
+    $scope.nextComic = function() {
+      _this.nextComic();
+    };
 
+    $scope.prevComic = function() {
+      _this.prevComic();
+    };
+
+    $scope.isLast = function() {
+      return _this.isLast();
+    };
+    $scope.isFirst = function() {
+      return _this.isFirst();
+    };
+
+    _this.comicId = id;
+    _this.$rootScope = $rootScope;
+    _this.$state = $state;
   }
+
+  ComicCtrl.prototype = {
+    isFirst: function() {
+      if(!this.$rootScope.data.comics.length) {
+        return false;
+      }
+      var comicsLength = this.$rootScope.data.comics;
+      return (this.comicId === this.$rootScope.data.comics[comicsLength - 1]);
+    },
+    isLast: function() {
+      if(!this.$rootScope.data.comics.length) {
+        return false;
+      }
+      return (this.comicId === this.$rootScope.data.comics[0].id);
+    },
+    nextComic: function(event) {
+      var _this = this;
+      _this.$rootScope.data.comics.some(function(comic, i) {
+        if(comic.id === _this.$rootScope.data.comic.id) {
+          if(i - 1 >= 0) {
+            var prevComic = _this.$rootScope.data.comics[i - 1];
+            return _this.$state.go('comic', {id: prevComic.id, slug: prevComic.slug});
+          }
+          else {
+            return i;
+          }
+        }
+      });
+    },
+    prevComic: function(event) {
+      var _this = this;
+      _this.$rootScope.data.comics.some(function(comic, i) {
+        if(comic.id === _this.$rootScope.data.comic.id) {
+          if(i + 1 < _this.$rootScope.data.comics.length) {
+            var nextComic = _this.$rootScope.data.comics[i + 1];
+            return _this.$state.go('comic', {id: nextComic.id, slug: nextComic.slug});
+          }
+          else {
+            return i;
+          }
+        }
+      });
+    }
+  };
 
   return app.controller('ComicCtrl', ComicCtrl);
 });

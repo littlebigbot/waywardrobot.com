@@ -7,10 +7,14 @@
     </div>
 
     <hgroup>
-      <h1>{{$root.data.comic.title}}</h1>
-      <h3>{{$root.data.comic.subtitle}}</h3>
+      <h1 class="title" data-ng-bind="$root.data.comic.title"></h1>
+      <h3 class="subtitle" data-ng-bind="$root.data.comic.subtitle"></h3>
       <time datetime="{{$root.data.comic.date}}">{{$root.data.comic.date | date:'MM:dd:yyyy'}}</time>
     </hgroup>
+    <div class="navigation">
+      <a ng-click="prevComic()" class="previous" ng-class="{disabled: isFirst()}">Previous</a>
+      <a ng-click="nextComic()" class="next" ng-class="{disabled: isLast()}">Next</a>
+    </div>
     <div class="the-comic">
       <img ng-src="{{'/images/comics/' + $root.data.comic.comic_full}}" alt="{{$root.data.comic.title}}" />
     </div>
