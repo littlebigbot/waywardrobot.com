@@ -11,6 +11,9 @@ define([
       templateUrl: 'app/partials/bottom.html',
       link: function () {
 
+      },
+      controller: function($scope) {
+        $scope.date = Date.now();
       }
     };
   }
