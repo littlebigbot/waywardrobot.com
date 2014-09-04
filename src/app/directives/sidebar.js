@@ -17,8 +17,17 @@ define([
         $scope.toggleSidebar = function(){
           $('.container').toggleClass('open-sidebar');
         };
-        // $().
 
+        // @TODO: Angularify this
+        $('.sidebar-expander')
+          .on('mouseover', function(){
+            if(!$('.open-sidebar').length) {
+              $('.sidebar').addClass('tease-sidebar');
+            }
+          })
+          .on('mouseleave', function() {
+            $('.sidebar').removeClass('tease-sidebar');
+          });
       }
     };
   }

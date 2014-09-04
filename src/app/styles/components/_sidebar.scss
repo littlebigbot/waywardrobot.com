@@ -7,6 +7,10 @@
   left: -15%;
   width: 15%;
 
+  .container:not(.open-sidebar) &.tease-sidebar {
+    left: -14%;
+  }
+
   .comics-list-wrap {
     width: 100%;
     overflow: auto;
@@ -26,6 +30,7 @@
     color: color('blue');
     margin-right:-5px;
     border-bottom:5px solid color('purple', 'dark');
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0, .3);
   }
 }
 
@@ -63,7 +68,7 @@
     overflow: hidden;
     padding: 5px;
     &.active {
-      background: color('yellow');
+      background: color('purple');
     }
     img {
       width: 100%;
