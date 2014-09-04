@@ -4,7 +4,10 @@ footer {
   left: 0;
   right: 0;
   height: 50px;
+  padding: 0 50px 0 10%;
   background: color('blue');
   border-top: 5px solid color('blue', dark);
-  z-index: 1;
+  z-index: 101;
+  color: color('yellow', 'light');
+  line-height: 45px;
 }

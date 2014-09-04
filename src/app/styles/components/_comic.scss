@@ -1,5 +1,13 @@
 .comic {
   max-width: $max-comic-width;
+  margin-top: 20px;
+
+  .title {
+    color: color('purple');
+  }
+  .subtitle {
+    color: color('blue');
+  }
 }
 
 .the-comic {
@@ -47,8 +55,9 @@
 .post {
   margin:50px 0;
   background: white;
-  padding:20px;
+  padding: 20px 40px 50px;
   h2 {
     color:color('blue');
+    margin-bottom: 10px;
   }
 }
