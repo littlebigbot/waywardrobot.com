@@ -26,7 +26,12 @@ header {
     line-height: 45px;
 
     li {
+      margin: 0 5px;
       float: left;
+
+      i {
+        color: color('red')
+      }
     }
   }
 
