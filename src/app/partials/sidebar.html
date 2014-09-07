@@ -2,14 +2,20 @@
 
   <h2><a class="archives-link" ui-sref="archives">Archives</a></h2>
 
-  <a class="sidebar-expander" ng-click="toggleSidebar()"></a>
+  <a class="sidebar-expander" ng-mouseover="teaseSidebar()" ng-click="toggleSidebar()"><span>Toggle Sidebar</span></a>
 
   <nav class="comics-list-wrap">
 
     <ul class="comics-list">
-      <li ui-sref-active="active" ng-repeat="comic in $root.data.comics" ng-class="{current:isCurrentComic(comic.id)}">
+      <li
+        ui-sref-active="active"
+        ng-repeat="comic in $root.data.comics"
+        ng-class="{current:isCurrentComic(comic.id)}">
         <a ui-sref="comic({id: comic.id, slug: comic.slug})">
-          <img ng-src="images/comics/{{comic.comic_thumb}}" alt="{{comic.title}}" />
+          <img
+            lazy-load-src="images/comics/{{comic.comic_thumb}}"
+            lazy-load-watch=".comics-list-wrap"
+            alt="{{comic.title}}" />
           <h3>{{comic.title}}</h3>
         </a>
       </li>
