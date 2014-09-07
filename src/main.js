@@ -27,7 +27,9 @@ requirejs.config({
     // Adding directives hurr
     'app/directives/bottom',
     'app/directives/sidebar',
-    'app/directives/topnav'
+    'app/directives/topnav',
+    'app/directives/lazy-load-src',
+    'jquery'
   ]
 });
 
