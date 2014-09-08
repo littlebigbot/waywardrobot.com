@@ -64,6 +64,13 @@ define([
 
       // adding a new container to watch scrolling
       function addScrollContainer( container ) {
+        // Don't actually need this loop, but
+        // Also don't need to be redundant.
+        for( var i; i < containers.length; i++ ) {
+          if( containers[ i ] === container ) {
+            return;
+          }
+        }
         containers.push( container );
       }
 
