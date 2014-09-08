@@ -15,20 +15,6 @@ define([
       controllerAs: 'ctrl',
       link: function ($scope) {
 
-        $scope.toggleSidebar = function(){
-          $('.container').toggleClass('open-sidebar');
-        };
-
-        // @TODO: Angularify
-        $('.sidebar-expander')
-          .on('mouseover', function(){
-            if(!$('.open-sidebar').length) {
-              $('.sidebar').addClass('tease-sidebar');
-            }
-          })
-          .on('mouseleave', function() {
-            $('.sidebar').removeClass('tease-sidebar');
-          });
       }
     };
   }

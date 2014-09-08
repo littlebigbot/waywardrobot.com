@@ -1,8 +1,14 @@
-<aside class="sidebar">
+<aside class="sidebar" ng-class="{'tease-sidebar':teaseSidebar}">
 
   <h2><a class="archives-link" ui-sref="archives">Archives</a></h2>
 
-  <a class="sidebar-expander" ng-mouseover="teaseSidebar()" ng-click="toggleSidebar()"><span>Toggle Sidebar</span></a>
+  <a
+    class="sidebar-expander"
+    ng-mouseenter="teaseSidebar = true"
+    ng-mouseleave="teaseSidebar = false"
+    ng-click="$root.openSidebar = !$root.openSidebar">
+    <span>Toggle Sidebar</span>
+  </a>
 
   <nav class="comics-list-wrap">
 
