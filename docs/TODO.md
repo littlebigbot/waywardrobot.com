@@ -1,9 +1,10 @@
 # TODO
 
-- [ ] (Optional) Find new color palette
 - [ ] (Optional) Ability to add "pages"
 - [ ] Design
 	- [ ] Polish current design
+		- [ ] (Optional) Find new color palette
+		- [ ] (Optional) Find new font
 	- [ ] Hover/other effects
 	- [ ] Add design for archives page
 	- [ ] Responsive design
