@@ -17,6 +17,7 @@ define([
     _this.$scope = $scope;
   };
 
+  // @TODO: Only call this when it's on a comics state
   AppCtrl.prototype.navigate = function($event) {
     var keycode = $event.keyCode;
 
