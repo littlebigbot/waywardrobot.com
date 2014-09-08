@@ -17,11 +17,16 @@ define([
     $rootScope.currentPageTitle = '';
 
     if($rootScope.data.comics.length) {
-      $rootScope.data.comics.some(function(comic, i) {
-        if(comic.id === id) {
-          return $rootScope.data.comic = comic;
-        }
-      });
+      if(typeof id === 'undefined') {
+        $rootScope.data.comic = $rootScope.data.comics[0];
+      }
+      else {
+        $rootScope.data.comics.some(function(comic, i) {
+          if(comic.id === id) {
+            return $rootScope.data.comic = comic;
+          }
+        });
+      }
       $rootScope.currentPageTitle = $rootScope.data.comic.title;
     }
     else {
