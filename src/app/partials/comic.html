@@ -24,7 +24,7 @@
         <a ng-click="prevComic()" class="previous" ng-class="{disabled: isFirst()}"><i class="fa fa-chevron-circle-left"></i><span>Previous</span></a>
         <a ng-click="nextComic()" class="next" ng-class="{disabled: isLast()}"><i class="fa fa-chevron-circle-right"></i><span>Next</span></a>
       </div>
-      <img ng-src="{{'/images/comics/' + $root.data.comic.comic_full}}" alt="{{$root.data.comic.title}}" />
+      <img ng-src="{{'/images/comics/' + $root.data.comic.comic_full}}" alt="{{$root.data.comic.title}}" title="{{$root.data.comic.title}}" />
     </div>
 
   </div>

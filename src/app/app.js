@@ -14,9 +14,8 @@ define([
       .run(function($rootScope){
         $rootScope.data = {};
         $rootScope.data.comics = {};
-        $rootScope.$on('$stateChangeStart',
-        function(event, toState, toParams, fromState, fromParams){
-          if(toState.name !== 'comic' && toState.name != 'index') {
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+          if(toState.name !== 'comic' && toState.name !== 'index') {
             $rootScope.data.currentPageTitle = toState.data.pageTitle;
           }
         });

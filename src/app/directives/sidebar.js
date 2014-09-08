@@ -14,11 +14,12 @@ define([
       controller: 'SidebarCtrl',
       controllerAs: 'ctrl',
       link: function ($scope) {
+
         $scope.toggleSidebar = function(){
           $('.container').toggleClass('open-sidebar');
         };
 
-        // @TODO: Angularify this
+        // @TODO: Angularify
         $('.sidebar-expander')
           .on('mouseover', function(){
             if(!$('.open-sidebar').length) {
