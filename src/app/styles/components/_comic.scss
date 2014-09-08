@@ -1,6 +1,7 @@
-.comic {
+main > .comic {
   max-width: $max-comic-width;
   margin-top: 20px;
+  padding-left: (10% * 100/85);
 
   .title {
     color: color('purple');

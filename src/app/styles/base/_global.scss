@@ -124,6 +124,8 @@ header {
 
 .container {
   position: relative;
+  min-height: 1000px;
+
   > * {
     @include transition(all .15s);
   }

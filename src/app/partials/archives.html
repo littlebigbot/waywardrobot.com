@@ -1,11 +1,15 @@
-<div
-  ng-repeat="comic in $root.data.comics"
-  ng-class="{current:isCurrentComic(comic.id)}"
-  style="height:300px">
-  <a ui-sref="comic({id: comic.id, slug: comic.slug})">
-    <img
-      lazy-load-src="images/comics/{{comic.comic_thumb}}"
-      alt="{{comic.title}}" />
-    <h3>{{comic.title}}</h3>
-  </a>
+<div class="archives">
+
+  <div
+    ng-repeat="comic in $root.data.comics"
+    ng-class="{current:isCurrentComic(comic.id)}"
+    class="comic">
+    <a ui-sref="comic({id: comic.id, slug: comic.slug})">
+      <img
+        lazy-load-src="images/comics/{{comic.comic_thumb}}"
+        alt="{{comic.title}}" />
+      <h3>{{comic.title}}</h3>
+    </a>
+  </div>
+
 </div>

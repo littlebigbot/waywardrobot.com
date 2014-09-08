@@ -1,0 +1,15 @@
+.archives {
+  @include clearfix();
+  padding: 0 5%;
+
+  .comic {
+    height: 300px;
+    width: 33.33333332%;
+    float: left;
+    padding: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
