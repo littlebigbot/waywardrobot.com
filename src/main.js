@@ -29,6 +29,9 @@ requirejs.config({
     'app/directives/sidebar',
     'app/directives/topnav',
     'app/directives/lazy-load-src',
+    'app/directives/comic-navigation',
+    // Not a directive, but lazy load shit is weird
+    // @TODO: Don't have jquery as dep here
     'jquery'
   ]
 });
