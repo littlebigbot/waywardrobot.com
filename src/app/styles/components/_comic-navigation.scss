@@ -13,6 +13,10 @@
     top:200px;
     font-size: $circle-size + 1px;
 
+    &.disabled {
+      display: none;
+    }
+
     &:hover {
       cursor: pointer;
       background: color('blue', 'dark');
