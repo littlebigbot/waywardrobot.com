@@ -12,17 +12,23 @@ define([
    */
   var ComicCtrl = function($state, $scope, $rootScope, $stateParams, comicsFactory) {
     var _this = this;
-    var id = $stateParams.id;
+    $scope.id = $stateParams.id;
 
     $rootScope.currentPageTitle = '';
 
+    $scope.$watch('id', function(value) {
+      $scope.isFirst = _this.isFirst();
+      $scope.isLast = _this.isLast();
+    });
+
     if($rootScope.data.comics.length) {
-      if(typeof id === 'undefined') {
+      if(typeof $scope.id === 'undefined') {
         $rootScope.data.comic = $rootScope.data.comics[0];
+        $scope.id = $rootScope.data.comic.id;
       }
       else {
         $rootScope.data.comics.some(function(comic, i) {
-          if(comic.id === id) {
+          if(comic.id === $scope.id) {
             return $rootScope.data.comic = comic;
           }
         });
@@ -30,17 +36,18 @@ define([
       $rootScope.currentPageTitle = $rootScope.data.comic.title;
     }
     else {
-      comicsFactory.getComic(id)
+      comicsFactory.getComic($scope.id)
         .then(function (response) {
           $rootScope.data.comic = response.data[0];
           $rootScope.data.currentPageTitle = $rootScope.data.comic.title;
+          $scope.id = $rootScope.data.comic.id;
         }, function (error) {
           console.log(error);
         });
     }
 
     $scope.$on('nextComic', function(event) {
-      this.nextComic(event);
+      _this.nextComic(event);
     });
 
     $scope.$on('previousComic', function(event) {
@@ -55,14 +62,7 @@ define([
       _this.prevComic();
     };
 
-    $scope.isLast = function() {
-      return _this.isLast();
-    };
-    $scope.isFirst = function() {
-      return _this.isFirst();
-    };
-
-    _this.comicId = id;
+    _this.$scope = $scope;
     _this.$rootScope = $rootScope;
     _this.$state = $state;
   }
@@ -72,14 +72,14 @@ define([
       if(!this.$rootScope.data.comics.length) {
         return false;
       }
-      var comicsLength = this.$rootScope.data.comics;
-      return (this.comicId === this.$rootScope.data.comics[comicsLength - 1]);
+      var comicsLength = this.$rootScope.data.comics.length;
+      return (this.$scope.id === this.$rootScope.data.comics[comicsLength - 1].id);
     },
     isLast: function() {
       if(!this.$rootScope.data.comics.length) {
         return false;
       }
-      return (this.comicId === this.$rootScope.data.comics[0].id);
+      return (this.$scope.id === this.$rootScope.data.comics[0].id);
     },
     nextComic: function(event) {
       var _this = this;
