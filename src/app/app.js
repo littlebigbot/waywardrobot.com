@@ -15,7 +15,6 @@ define([
         $rootScope.data = {};
         $rootScope.data.comics = {};
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
-          scroll(0,0)
           if(toState.name !== 'comic' && toState.name !== 'index') {
             $rootScope.data.currentPageTitle = toState.data.pageTitle;
           }

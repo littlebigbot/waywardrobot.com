@@ -12,80 +12,82 @@ define([
       templateUrl: 'app/partials/comic-navigation.html',
       link: function ($scope) {
         // @TODO: NOT THIS MESS.
-        var win = $(window);
-        var nav = $('.navigation');
-        var previous = $('.navigation .previous');
-        var next = $('.navigation .next');
-        var theComic = $('.the-comic');
-        var header = $('header');
-        var previousLeft = previous.offset().left;
-        var arrowOriginalOffset = parseInt(previous.css('left'));
-        var nextRight = win.width() - next.offset().left - next.width();
-        var headerHeight = header.height();
-        var theComicOffsetTop = 0;
-        var navArrowOffsetTop = 0;
+        // var win = $(window);
+        // var nav = $('.navigation');
+        // var previous = $('.navigation .previous');
+        // var next = $('.navigation .next');
+        // var theComic = $('.the-comic');
+        // var header = $('header');
+        // var previousLeft = previous.offset().left;
+        // var arrowOriginalOffset = parseInt(previous.css('left'));
+        // var nextRight = win.width() - next.offset().left - next.width();
+        // var headerHeight = header.height();
+        // var theComicOffsetTop = 0;
+        // var navArrowOffsetTop = 0;
 
-        var theComicLeft = function() {
-          return theComic.offset().left;
-        }
-        var theComicRight = function() {
-          return win.width() - (theComic.offset().left + theComic.width()) - next.width();
-        }
+        // var theComicLeft = function() {
+        //   return theComic.offset().left;
+        // }
+        // var theComicRight = function() {
+        //   return win.width() - (theComic.offset().left + theComic.width()) - next.width();
+        // }
 
-        win.on(
-          'resize',
-          function() {
-            nextRight =  theComicRight() + arrowOriginalOffset - next.width();
-            previousLeft = theComicLeft() + arrowOriginalOffset;
-            win.trigger('scroll');
-          }
-        );
+        // win.on(
+        //   'resize',
+        //   function() {
+        //     nextRight =  theComicRight() + arrowOriginalOffset - next.width();
+        //     previousLeft = theComicLeft() + arrowOriginalOffset;
+        //     win.trigger('scroll');
+        //   }
+        // );
 
-        win.on(
-          'scroll',
-          function(){
+        // win.on(
+        //   'scroll',
+        //   function(){
 
-            navArrowOffsetTop = (navArrowOffsetTop === 0)  ? previous.offset().top : navArrowOffsetTop;
-            theComicOffsetTop = (theComicOffsetTop === 0)  ? theComic.offset().top : theComicOffsetTop;
-            var navTop = navArrowOffsetTop - theComicOffsetTop + headerHeight;
+        //     navArrowOffsetTop = (navArrowOffsetTop === 0)  ? previous.offset().top : navArrowOffsetTop;
+        //     theComicOffsetTop = (theComicOffsetTop === 0)  ? theComic.offset().top : theComicOffsetTop;
+        //     navArrowOffsetTop = (previous.hasClass('fixed')) ? navArrowOffsetTop + theComicOffsetTop : navArrowOffsetTop;
+        //     console.log(navArrowOffsetTop, theComicOffsetTop)
+        //     var navTop = navArrowOffsetTop - theComicOffsetTop + headerHeight;
 
-            if(win.scrollTop() >= theComicOffsetTop - headerHeight) {
-              nav
-                .addClass('fixed');
+        //     if(win.scrollTop() >= theComicOffsetTop - headerHeight) {
+        //       nav
+        //         .addClass('fixed');
 
-              previous
-                .css({
-                  'top': navTop,
-                  'left': previousLeft
-                });
+        //       previous
+        //         .css({
+        //           'top': navTop,
+        //           'left': previousLeft
+        //         });
 
-              next
-                .css({
-                  'top': navTop,
-                  'right': nextRight
-                });
+        //       next
+        //         .css({
+        //           'top': navTop,
+        //           'right': nextRight
+        //         });
 
-            }
-            else {
-              nav
-                .removeClass('fixed');
+        //     }
+        //     else {
+        //       nav
+        //         .removeClass('fixed');
 
-              previous
-                .removeAttr('style');
-              next
-                .removeAttr('style');
-            }
-          }
-        );
+        //       previous
+        //         .removeAttr('style');
+        //       next
+        //         .removeAttr('style');
+        //     }
+        //   }
+        // );
 
-        $scope.$on(
-          '$destroy',
-          function() {
-            win
-              .off('scroll')
-              .off('resize');
-          }
-        );
+        // $scope.$on(
+        //   '$destroy',
+        //   function() {
+        //     win
+        //       .off('scroll')
+        //       .off('resize');
+        //   }
+        // );
       }
     };
   }
