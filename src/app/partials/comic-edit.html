@@ -11,7 +11,7 @@
       <h3 class="subtitle" data-ng-bind="$root.data.comic.subtitle"></h3>
 
       <a ui-sref="comic({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-times"></i>Cancel</a>
-      <a ui-sref="comic-edit({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-save"></i>Save</a>
+      <a ng-click="save()"><i class="fa fa-save"></i>Save</a>
 
     </hgroup>
     <div class="the-comic">
@@ -20,20 +20,11 @@
 
   </div>
 
-  <div markdown>
-# test
-
-- just
-- you
-- and
-- i
-  </div>
-
   <div class="below-fold">
 
     <section class="post">
       <h2>NOTES</h2>
-      <div ng-bind="$root.data.comic.post_content"></div>
+      <textarea ng-bind="$root.data.comic.post_content"></textarea>
     </section>
 
     <aside class="ads">
