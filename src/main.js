@@ -3,7 +3,8 @@ requirejs.config({
     'angular': 'vendor/angular/angular',
     'angular-ui-router': 'vendor/angular-ui-router/release/angular-ui-router',
     'jquery': 'vendor/jquery/dist/jquery.min',
-    'bootstrap': 'vendor/bootstrap-sass/dist/js/bootstrap.min'
+    'bootstrap': 'vendor/bootstrap-sass/dist/js/bootstrap.min',
+    'showdown': 'vendor/showdown/compressed/showdown'
   },
   shim: {
     'angular': {
@@ -30,6 +31,7 @@ requirejs.config({
     'app/directives/topnav',
     'app/directives/lazy-load-src',
     'app/directives/comic-navigation',
+    'app/directives/markdown',
     // Not a directive, but lazy load shit is weird
     // @TODO: Don't have jquery as dep here
     'jquery'

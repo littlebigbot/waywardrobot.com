@@ -1,7 +1,8 @@
 define([
   'app/app',
   'app/controllers/comic',
-  'app/controllers/archives'
+  'app/controllers/archives',
+  'app/controllers/comic-edit'
   ], function(app) {
   'use strict';
 
@@ -17,6 +18,11 @@ define([
         url: '/:id/:slug',
         templateUrl: 'app/partials/comic.html',
         controller: 'ComicCtrl as ctrl'
+      })
+      .state('comic-edit', {
+        url: '/edit/:id/:slug',
+        templateUrl: 'app/partials/comic-edit.html',
+        controller: 'ComicEditCtrl as ctrl'
       })
       .state('archives', {
         url: '/archives',

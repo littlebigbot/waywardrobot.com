@@ -15,7 +15,7 @@ define([
         $rootScope.data = {};
         $rootScope.data.comics = {};
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
-          if(toState.name !== 'comic' && toState.name !== 'index') {
+          if(toState.name !== 'comic' && toState.name !== 'index' && toState.name !== 'comic-edit') {
             $rootScope.data.currentPageTitle = toState.data.pageTitle;
           }
         });

@@ -10,23 +10,23 @@
       <h1 class="title" data-ng-bind="$root.data.comic.title"></h1>
       <h3 class="subtitle" data-ng-bind="$root.data.comic.subtitle"></h3>
 
-     <!--  <a class="share">
-        SHARE
-        <ul class="share-links">
-          <li>
-            <a href="FACEBOOKSHARELINK" target="_blank">Facebook</a>
-          </li>
-        </ul>
-      </a> -->
-
-      <a ui-sref="comic-edit({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-pencil"></i>Edit</a>
+      <a ui-sref="comic({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-times"></i>Cancel</a>
+      <a ui-sref="comic-edit({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-save"></i>Save</a>
 
     </hgroup>
     <div class="the-comic">
-      <comic-navigation></comic-navigation>
       <img ng-src="{{'/images/comics/' + $root.data.comic.comic_full}}" alt="{{$root.data.comic.title}}" title="{{$root.data.comic.title}}" />
     </div>
 
+  </div>
+
+  <div markdown>
+# test
+
+- just
+- you
+- and
+- i
   </div>
 
   <div class="below-fold">
