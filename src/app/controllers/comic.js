@@ -16,7 +16,7 @@ define([
 
     $rootScope.currentPageTitle = '';
 
-    $scope.$watch('id', function(value) {
+    $scope.$watch('id', function(newId, oldId) {
       $scope.isFirst = _this.isFirst();
       $scope.isLast = _this.isLast();
     });
@@ -41,6 +41,8 @@ define([
           $rootScope.data.comic = response.data[0];
           $rootScope.data.currentPageTitle = $rootScope.data.comic.title;
           $scope.id = $rootScope.data.comic.id;
+          $scope.isFirst = _this.isFirst();
+          $scope.isLast = _this.isLast();
         }, function (error) {
           console.log(error);
         });
@@ -68,18 +70,20 @@ define([
   }
 
   ComicCtrl.prototype = {
-    isFirst: function() {
+    isFirst: function(id) {
       if(!this.$rootScope.data.comics.length) {
         return false;
       }
       var comicsLength = this.$rootScope.data.comics.length;
-      return (this.$scope.id === this.$rootScope.data.comics[comicsLength - 1].id);
+      if(typeof id === 'undefined') id = this.$rootScope.data.comics[comicsLength - 1].id;
+      return (this.$scope.id === id);
     },
-    isLast: function() {
+    isLast: function(id) {
       if(!this.$rootScope.data.comics.length) {
         return false;
       }
-      return (this.$scope.id === this.$rootScope.data.comics[0].id);
+      if(typeof id === 'undefined') id = this.$rootScope.data.comics[0].id;
+      return (this.$scope.id === id);
     },
     nextComic: function(event) {
       var _this = this;

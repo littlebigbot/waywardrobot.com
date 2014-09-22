@@ -1,7 +1,6 @@
 main > .comic {
   max-width: $max-comic-width;
-  margin-top: 20px;
-  margin-left: (10% * 100/85);
+  margin: 20px auto 0;
 
   .title {
     color: color('purple');
@@ -14,7 +13,7 @@ main > .comic {
 .the-comic {
   background: #fff;
   text-align: center;
-  padding: 50px;
+  padding: 0 50px;
   position: relative;
 }
 
