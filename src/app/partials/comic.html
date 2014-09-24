@@ -34,7 +34,7 @@
 
     <section class="post">
       <h2>NOTES</h2>
-      <div ng-bind="$root.data.comic.post_content"></div>
+      <div ng-bind-html="$root.data.comic.post_content | markdown"></div>
     </section>
 
     <aside class="ads">

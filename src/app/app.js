@@ -3,13 +3,15 @@ define([
   // depends on 'app/app'
   'angular',
   'angular-ui-router',
-  'app/providers/config'
+  'app/providers/config',
+  'angular-sanitize'
 ], function(angular) {
     'use strict';
 
     var app = angular.module('app', [
       'ui.router',
-      'config'
+      'config',
+      'ngSanitize'
     ])
       .run(function($rootScope){
         $rootScope.data = {};
