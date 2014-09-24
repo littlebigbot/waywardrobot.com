@@ -47,8 +47,7 @@ class ComicsController
 	public function update($id, Request $request)
 	{
 		$comic = $this->getDataFromRequest($request);
-		// $this->comicsService->update($id, $comic);
-		var_dump($comic);
+		$this->comicsService->update($id, $comic);
 		return new JsonResponse($comic);
 
 	}
@@ -62,6 +61,8 @@ class ComicsController
 
 	public function getDataFromRequest(Request $request)
 	{
-		return $comic = $request->request;
+		return $comic = array(
+			"comic" => $request->request->get("comic")
+		);
 	}
 }
