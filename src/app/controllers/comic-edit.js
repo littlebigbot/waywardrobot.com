@@ -14,7 +14,7 @@ define([
     var _this = this;
     $scope.id = $stateParams.id;
 
-    $rootScope.currentPageTitle = '';
+    $rootScope.data.currentPageTitle = '';
 
     if($rootScope.data.comics.length) {
       if(typeof $scope.id === 'undefined') {
@@ -28,22 +28,32 @@ define([
           }
         });
       }
-      $rootScope.currentPageTitle = $rootScope.data.comic.title;
+      $rootScope.data.currentPageTitle = 'Edit ' + $rootScope.data.comic.title;
     }
     else {
       comicsFactory.getComic($scope.id)
         .then(function (response) {
           $rootScope.data.comic = response.data[0];
-          $rootScope.data.currentPageTitle = $rootScope.data.comic.title;
+          $rootScope.data.currentPageTitle = 'Edit ' + $rootScope.data.comic.title;
           $scope.id = $rootScope.data.comic.id;
         }, function (error) {
           console.log(error);
         });
     }
 
+    $scope.save = function() {
+      return _this.save();
+    }
+
     _this.$scope = $scope;
     _this.$rootScope = $rootScope;
     _this.$state = $state;
+  };
+
+  ComicEditCtrl.prototype = {
+    save: function() {
+      var _this = this;
+    }
   };
 
   return app.controller('ComicEditCtrl', ComicEditCtrl);

@@ -12,7 +12,7 @@
 	- [ ] Design editing comics
 	- [ ] Design adding of comics
 	- [ ] Animations
-	- [x] Arrows being "attached" to top of page when scrolling - May have not been worth it...
+	- [x] ~~Arrows being "attached" to top of page when scrolling~~ - May have not been worth it...
 - [ ] Edit comics
 	- [ ] Edit
 	- [ ] Create

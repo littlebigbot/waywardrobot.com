@@ -7,8 +7,8 @@
     </div>
 
     <hgroup>
-      <h1 class="title" data-ng-bind="$root.data.comic.title"></h1>
-      <h3 class="subtitle" data-ng-bind="$root.data.comic.subtitle"></h3>
+      <input class="title" type="text" data-ng-model="$root.data.comic.title"/>
+      <input class="subtitle" data-ng-model="$root.data.comic.subtitle"/>
 
       <a ui-sref="comic({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-times"></i>Cancel</a>
       <a ng-click="save()"><i class="fa fa-save"></i>Save</a>
@@ -24,7 +24,8 @@
 
     <section class="post">
       <h2>NOTES</h2>
-      <textarea ng-bind="$root.data.comic.post_content"></textarea>
+      <textarea ng-model="$root.data.comic.post_content"></textarea>
+      <a ng-click="save()"><i class="fa fa-save"></i>Save</a>
     </section>
 
     <aside class="ads">

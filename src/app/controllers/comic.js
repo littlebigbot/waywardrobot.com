@@ -14,7 +14,7 @@ define([
     var _this = this;
     $scope.id = $stateParams.id;
 
-    $rootScope.currentPageTitle = '';
+    $rootScope.data.currentPageTitle = '';
 
     $scope.$watch('id', function(newId, oldId) {
       $scope.isFirst = _this.isFirst();
@@ -33,7 +33,7 @@ define([
           }
         });
       }
-      $rootScope.currentPageTitle = $rootScope.data.comic.title;
+      $rootScope.data.currentPageTitle = $rootScope.data.comic.title;
     }
     else {
       comicsFactory.getComic($scope.id)
