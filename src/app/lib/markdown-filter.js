@@ -7,8 +7,7 @@ define([
   var markdown = function () {
     var converter = new Showdown.converter();
     return function(input) {
-      if(typeof input === 'undefined') input = '';
-      console.log(input);
+      if(typeof input === 'undefined') return '';
       return converter.makeHtml(input);
     }
   };
