@@ -1,7 +1,8 @@
 define([
   'angular',
   'app/app',
-  'app/providers/comics-factory'
+  'app/providers/comics-factory',
+  'app/providers/comics-persister'
 ], function(angular, app) {
   'use strict';
 
@@ -10,7 +11,7 @@ define([
    * @classdesc Controller for the comic view
    * @ngInject
    */
-  var ComicEditCtrl = function($state, $scope, $rootScope, $stateParams, comicsFactory) {
+  var ComicEditCtrl = function($state, $scope, $rootScope, $stateParams, comicsFactory, comicsPersister) {
     var _this = this;
     $scope.id = $stateParams.id;
 
@@ -48,11 +49,13 @@ define([
     _this.$scope = $scope;
     _this.$rootScope = $rootScope;
     _this.$state = $state;
+    _this.comicsPersister = comicsPersister;
   };
 
   ComicEditCtrl.prototype = {
     save: function() {
       var _this = this;
+      _this.comicsPersister.updateComic();
     }
   };
 

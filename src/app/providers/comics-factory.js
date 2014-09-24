@@ -16,15 +16,6 @@ define([
       },
       getComic: function(id, forceFetch, successCallback, failureCallback) {
         return $http.get(urlBase + ((typeof id !== 'undefined') ? '/' + id : '/newest'));
-      },
-      updateComic: function(comic) {
-        return $http.put(urlBase + '/' + comic.id, comic);
-      },
-      addComic: function(comic) {
-        return $http.put(urlBase, comic);
-      },
-      deleteComic: function(id) {
-        return $http.delete(urlBase, + '/' + id);
       }
     };
   }

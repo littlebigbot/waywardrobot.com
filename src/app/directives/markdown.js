@@ -4,7 +4,7 @@ define([
 ], function(app) {
   'use strict';
 
-  var markdown = function ($http) {
+  var markdown = function () {
     var converter = new Showdown.converter();
     return {
       restrict: 'A',
