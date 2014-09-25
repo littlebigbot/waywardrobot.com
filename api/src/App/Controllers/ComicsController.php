@@ -61,8 +61,6 @@ class ComicsController
 
 	public function getDataFromRequest(Request $request)
 	{
-		return $comic = array(
-			"comic" => $request->request->get("comic")
-		);
+		return $request->request->get("comic");
 	}
 }
