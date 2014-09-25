@@ -13,12 +13,12 @@ define([
     this.updateComic = function(updatedComic) {
       // @TODO: hookup persistence right.
       $rootScope.data.comics.some(function(comic, i) {
-        if(comic.id === $rootScope.data.comic.id) {
-          return $rootScope.data.comics[i] = $rootScope.data.comic;
+        if(comic.id === updatedComic.id) {
+          return $rootScope.data.comics[i] = updatedComic;
         }
       });
-      $state.go('comic',{id:$rootScope.data.comic.id, slug: $rootScope.data.comic.slug});
-      return $http.post(urlBase + '/' + $rootScope.data.comic.id, {comic:$rootScope.data.comic});
+      $state.go('comic',{id:updatedComic.id, slug: updatedComic.slug});
+      return $http.post(urlBase + '/' + updatedComic.id, {comic:updatedComic});
     },
     this.addComic = function(comic) {
       // return $http.put(urlBase, comic);

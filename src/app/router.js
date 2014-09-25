@@ -2,7 +2,8 @@ define([
   'app/app',
   'app/controllers/comic',
   'app/controllers/archives',
-  'app/controllers/comic-edit'
+  'app/controllers/comic-edit',
+  'app/controllers/comic-create'
   ], function(app) {
   'use strict';
 
@@ -30,6 +31,14 @@ define([
         controller: 'ArchivesCtrl as ctrl',
         data: {
           pageTitle: 'Archives'
+        }
+      })
+      .state('comic-create', {
+        url: '/create',
+        templateUrl: 'app/partials/comic-edit.html',
+        controller: 'ComicCreateCtrl as ctrl',
+        data: {
+          pageTitle: 'Create Comic'
         }
       });
     // $locationProvider.html5Mode(true);

@@ -7,15 +7,15 @@
     </div>
 
     <hgroup>
-      <input class="title" type="text" data-ng-model="$root.data.comic.title"/>
-      <input class="subtitle" data-ng-model="$root.data.comic.subtitle"/>
+      <input class="title" type="text" data-ng-model="comic.title"/>
+      <input class="subtitle" data-ng-model="comic.subtitle"/>
 
-      <a ui-sref="comic({id:$root.data.comic.id, slug:$root.data.comic.slug})"><i class="fa fa-times"></i>Cancel</a>
-      <a ng-click="save()"><i class="fa fa-save"></i>Save</a>
+      <a ui-sref="comic({id:comic.id, slug:comic.slug})"><i class="fa fa-times"></i>Cancel</a>
+      <a ng-click="save(comic)"><i class="fa fa-save"></i>Save</a>
 
     </hgroup>
     <div class="the-comic">
-      <img ng-src="{{'/images/comics/' + $root.data.comic.comic_full}}" alt="{{$root.data.comic.title}}" title="{{$root.data.comic.title}}" />
+      <img ng-src="{{'/images/comics/' + comic.comic_full}}" alt="{{comic.title}}" title="{{comic.title}}" />
     </div>
 
   </div>
@@ -24,8 +24,8 @@
 
     <section class="post">
       <h2>NOTES</h2>
-      <textarea ng-model="$root.data.comic.post_content"></textarea>
-      <a ng-click="save()"><i class="fa fa-save"></i>Save</a>
+      <textarea ng-model="comic.post_content"></textarea>
+      <a ng-click="save(comic)"><i class="fa fa-save"></i>Save</a>
     </section>
 
     <aside class="ads">

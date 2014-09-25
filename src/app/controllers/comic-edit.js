@@ -11,7 +11,7 @@ define([
    * @classdesc Controller for the comic view
    * @ngInject
    */
-  var ComicEditCtrl = function($state, $scope, $rootScope, $stateParams, comicsFactory, comicsPersister) {
+  var ComicEditCtrl = function($scope, $rootScope, $stateParams, comicsFactory, comicsPersister) {
     var _this = this;
     $scope.id = $stateParams.id;
 
@@ -29,6 +29,7 @@ define([
           }
         });
       }
+      $scope.comic = $rootScope.data.comic;
       $rootScope.data.currentPageTitle = 'Edit ' + $rootScope.data.comic.title;
     }
     else {
@@ -37,25 +38,25 @@ define([
           $rootScope.data.comic = response.data[0];
           $rootScope.data.currentPageTitle = 'Edit ' + $rootScope.data.comic.title;
           $scope.id = $rootScope.data.comic.id;
+          $scope.comic = $rootScope.data.comic;
         }, function (error) {
           console.log(error);
         });
     }
 
-    $scope.save = function() {
-      return _this.save();
+    $scope.save = function(comic) {
+      return _this.save(comic);
     }
 
     _this.$scope = $scope;
     _this.$rootScope = $rootScope;
-    _this.$state = $state;
     _this.comicsPersister = comicsPersister;
   };
 
   ComicEditCtrl.prototype = {
-    save: function() {
+    save: function(comic) {
       var _this = this;
-      _this.comicsPersister.updateComic();
+      _this.comicsPersister.updateComic(comic);
     }
   };
 
