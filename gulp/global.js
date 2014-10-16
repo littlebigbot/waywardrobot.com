@@ -7,5 +7,5 @@ GLOBAL.paths = {
 GLOBAL.isProd = false;
 
 if(argv.prod) {
-  global.isProd = argv.prod;
+  global.isProd = !!argv.prod;
 }

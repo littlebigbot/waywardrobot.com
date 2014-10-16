@@ -14,4 +14,5 @@ templateCache = require('gulp-angular-templatecache'),
 sass          = require('gulp-ruby-sass'),
 gulpIf        = require('gulp-if'),
 replace       = require('gulp-replace'),
-argv          = require('yargs').argv;
+argv          = require('yargs').argv,
+symlink       = require('gulp-symlink');
