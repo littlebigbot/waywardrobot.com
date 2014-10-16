@@ -1,13 +1,4 @@
-# Silex Simple REST
-[![Latest Stable Version](https://poser.pugx.org/vesparny/silex-simple-rest/v/stable.png)](https://packagist.org/packages/vesparny/silex-simple-rest) [![Total Downloads](https://poser.pugx.org/vesparny/silex-simple-rest/downloads.png)](https://packagist.org/packages/vesparny/silex-simple-rest) [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest) [![Dependency Status](https://www.versioneye.com/user/projects/52925eba632bac8d4d0000c1/badge.png)](https://www.versioneye.com/user/projects/52925eba632bac8d4d0000c1)
-
-
-A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](http://alessandro.arnodo.net).
-
-**This project wants to be a starting point to writing scalable and maintainable REST api with Silex PHP micro-framework**
-
-Continuous Integration is provided by [Travis-CI](http://travis-ci.org/).
-
+# Comicified Silex Simple REST
 
 ####How do I run it?
 From this folder run the following commands to install the php and bower dependencies, import some data, and run a local php server.
@@ -35,10 +26,10 @@ From the root folder run the following command to run tests.
 ####What you will get
 The api will respond to
 
-	GET  ->   http://localhost:9001/api/v1/notes
-	POST ->   http://localhost:9001/api/v1/notes
-	POST ->   http://localhost:9001/api/v1/notes/{id}
-	DELETE -> http://localhost:9001/api/v1/notes/{id}
+	GET  ->   http://localhost:9001/api/v1/comics
+	POST ->   http://localhost:9001/api/v1/comics
+	POST ->   http://localhost:9001/api/v1/comics/{id}
+	DELETE -> http://localhost:9001/api/v1/comics/{id}
 
 Your request should have 'Content-Type: application/json' header.
 Your api is CORS compliant out of the box, so it's capable of cross-domain communication.
@@ -46,16 +37,16 @@ Your api is CORS compliant out of the box, so it's capable of cross-domain commu
 Try with curl:
 	
 	#GET
-	curl http://localhost:9001/api/v1/notes -H 'Content-Type: application/json' -w "\n"
+	curl http://localhost:9001/api/v1/comics -H 'Content-Type: application/json' -w "\n"
 
 	#POST (insert)
-	curl -X POST http://localhost:9001/api/v1/notes -d '{"note":"Hello World!"}' -H 'Content-Type: application/json' -w "\n"
+	curl -X POST http://localhost:9001/api/v1/comics -d '{"comic":"Hello World!"}' -H 'Content-Type: application/json' -w "\n"
 
 	#POST (update)
-	curl -X POST http://localhost:9001/api/v1/notes/1 -d '{"note":"Uhauuuuuuu!"}' -H 'Content-Type: application/json' -w "\n"
+	curl -X POST http://localhost:9001/api/v1/comics/1 -d '{"comic":"Uhauuuuuuu!"}' -H 'Content-Type: application/json' -w "\n"
 
 	#DELETE
-	curl -X DELETE http://localhost:9001/api/v1/notes/1 -H 'Content-Type: application/json' -w "\n"
+	curl -X DELETE http://localhost:9001/api/v1/comics/1 -H 'Content-Type: application/json' -w "\n"
 
 ####What's under the hood
 Take a look at the source code, it's self explanatory :)
