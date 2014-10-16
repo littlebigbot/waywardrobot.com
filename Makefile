@@ -5,4 +5,4 @@ install:
 	bower install
 	gulp install
 	cd api && composer install
-	sqlite3 app.db < resources/sql/schema.sql
+	sqlite3 api/app.db < api/resources/sql/schema.sql
