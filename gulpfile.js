@@ -86,7 +86,8 @@ gulp.task('partials', function() {
   }
 });
 
-gulp.task('watch-partials', function() {
+gulp.task('watch', function() {
+
   watch({
     glob: paths.app + 'partials/**/*.html',
     name: 'partials watcher'
@@ -95,9 +96,7 @@ gulp.task('watch-partials', function() {
   })
     .pipe(gulpIf(isProd, wait(1000)))
     .pipe(connect.reload());
-});
 
-gulp.task('watch-styles', function() {
   watch({
     glob: paths.app + 'styles/**/*.scss',
     name: 'styles watcher'
@@ -106,9 +105,7 @@ gulp.task('watch-styles', function() {
   })
     .pipe(wait(1000))
     .pipe(connect.reload());
-});
 
-gulp.task('watch-scripts', function() {
   watch({
     glob: paths.app + '**/*.js',
     name: 'scripts watcher'
@@ -118,6 +115,7 @@ gulp.task('watch-scripts', function() {
     .pipe(gulpIf(isProd, wait(1000))) // Because tasks don't finish when they say
     .pipe(connect.reload());
 });
+
 
 gulp.task('copy-images', function() {
   gulp.src([
@@ -158,10 +156,4 @@ gulp.task('build', function() {
 gulp.task('default', [
   'server',
   'watch'
-]);
-
-gulp.task('watch', [
-  'watch-styles',
-  'watch-scripts',
-  'watch-partials'
 ]);
