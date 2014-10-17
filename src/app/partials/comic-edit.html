@@ -26,6 +26,8 @@
       <h2>NOTES</h2>
       <textarea ng-model="comic.post_content"></textarea>
       <a ng-click="save(comic)"><i class="fa fa-save"></i>Save</a>
+      <h3>Preview</h3>
+      <div class="preview" ng-bind-html="comic.post_content | markdown"></div>
     </section>
 
     <aside class="ads">
