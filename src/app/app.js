@@ -4,14 +4,16 @@ define([
   'angular',
   'angular-ui-router',
   'app/providers/config',
-  'angular-sanitize'
+  'angular-sanitize',
+  'angular-touch'
 ], function(angular) {
     'use strict';
 
     var app = angular.module('app', [
       'ui.router',
       'config',
-      'ngSanitize'
+      'ngSanitize',
+      'ngTouch'
     ])
       .run(function($rootScope){
         $rootScope.data = {};

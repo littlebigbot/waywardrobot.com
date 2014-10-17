@@ -5,7 +5,8 @@ requirejs.config({
     'jquery': 'vendor/jquery/dist/jquery.min',
     'bootstrap': 'vendor/bootstrap-sass/dist/js/bootstrap.min',
     'showdown': 'vendor/showdown/compressed/showdown',
-    'angular-sanitize': 'vendor/angular-sanitize/angular-sanitize.min'
+    'angular-sanitize': 'vendor/angular-sanitize/angular-sanitize.min',
+    'angular-touch': 'vendor/angular-touch/angular-touch.min'
   },
   shim: {
     'angular': {
@@ -17,6 +18,11 @@ requirejs.config({
       ]
     },
     'angular-sanitize': {
+      deps: [
+        'angular'
+      ]
+    },
+    'angular-touch': {
       deps: [
         'angular'
       ]
