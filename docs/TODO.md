@@ -17,7 +17,7 @@
 	- [ ] Edit
 	- [ ] Create
 	- [ ] Delete
-- [ ] Holy Documentation, Batman!
+- [x] Holy Documentation, Batman!
 - [ ] Touch events
 - [ ] HTML5 browsing on server
 - [ ] Clean up deploy script
@@ -28,7 +28,7 @@
 - [ ] How I add ad?!
 - [ ] Add comments (Disqus or alternative)
 - [ ] (Optional) RSS Feed
-- [ ] Break up gulp script
+- [x] Break up gulp script
 - [ ] Add share links:
 	- [ ] Twitter
 	- [ ] Facebook
