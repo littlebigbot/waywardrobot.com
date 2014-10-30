@@ -1,5 +1,7 @@
 define([
-  'app/app'
+  'app/app',
+  'app/providers/user-roles',
+  'app/providers/auth-service'
 ], function(app) {
   'use strict';
 
@@ -8,11 +10,19 @@ define([
    * @classdesc Controller for the comic view
    * @ngInject
    */
-  var AppCtrl = function($scope) {
+  var AppCtrl = function($scope, USER_ROLES, AuthService) {
     var _this = this;
     $scope.navigate = function($event) {
       _this.navigate($event);
     }
+
+    $scope.currentUser = null;
+    $scope.userRoles = USER_ROLES;
+    $scope.isAuthorized = AuthService.isAuthorized;
+
+    $scope.setCurrentUser = function (user) {
+      $scope.currentUser = user;
+    };
 
     _this.$scope = $scope;
   };

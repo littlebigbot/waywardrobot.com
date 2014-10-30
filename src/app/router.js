@@ -1,5 +1,6 @@
 define([
   'app/app',
+  'app/controllers/login',
   'app/controllers/comic',
   'app/controllers/archives',
   'app/controllers/comic-edit',
@@ -39,6 +40,14 @@ define([
         controller: 'ComicCreateCtrl as ctrl',
         data: {
           pageTitle: 'Create Comic'
+        }
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/partials/login.html',
+        controller: 'LoginController as ctrl',
+        data: {
+          pageTitle: 'Login'
         }
       });
     // $locationProvider.html5Mode(true);

@@ -17,11 +17,11 @@
 
 </head>
 <body ng-keyup="navigate($event)" ng-controller="AppCtrl">
-
   <div
   class="container"
   ng-class="{'open-sidebar':$root.openSidebar}">
 
+    <div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
     <top-nav></top-nav>
 
     <sidebar></sidebar>
